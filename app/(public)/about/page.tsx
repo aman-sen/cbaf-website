@@ -1,0 +1,112 @@
+import type { Metadata } from "next";
+import { Award, Users, Globe, Heart } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "About Us",
+  description: "Learn about Community Base Advancement Foundation — our story, team, and mission to build stronger communities across India.",
+};
+
+const team = [
+  { name: "Dr. Anjali Sharma", role: "Founder & Executive Director", bio: "15+ years in community development and social work across rural India." },
+  { name: "Rajan Gupta", role: "Director, Programs", bio: "Former NGO sector veteran with expertise in education and livelihood programs." },
+  { name: "Meera Nair", role: "Head, Women Empowerment", bio: "Champion of gender equality with deep grassroots experience in Bihar and Jharkhand." },
+  { name: "Akash Tiwari", role: "Director, Fundraising", bio: "Digital fundraising specialist who has raised ₹10Cr+ for social causes." },
+];
+
+export default function AboutPage() {
+  return (
+    <div>
+      {/* Hero */}
+      <div className="bg-gradient-to-br from-slate-900 to-green-950 py-20 px-4">
+        <div className="max-w-3xl mx-auto text-center">
+          <span className="inline-block bg-green-500/20 text-green-400 text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-md mb-4 border border-green-500/30">
+            About Us
+          </span>
+          <h1 className="font-display text-4xl sm:text-5xl font-bold text-white mb-4">
+            Built on Belief, Driven by Purpose
+          </h1>
+          <p className="text-gray-300 text-lg leading-relaxed">
+            Since 2015, we have been working at the intersection of community development,
+            education, and empowerment to create lasting change in India.
+          </p>
+        </div>
+      </div>
+
+      {/* Our Story */}
+      <section className="py-16 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6">
+          <h2 className="font-display text-3xl font-bold text-gray-900 mb-6">Our Story</h2>
+          <div className="prose prose-lg text-gray-600 space-y-4">
+            <p>
+              The Community Base Advancement Foundation was created from a simple yet powerful belief:
+              that truly strong communities are built when people are equipped, connected, and supported.
+            </p>
+            <p>
+              Founded in 2015 by a group of development professionals and social entrepreneurs, CBAF
+              started with a single women&apos;s skill development program in Gaya, Bihar. What began
+              as a small vocational training initiative quickly grew into a comprehensive community
+              development platform as we listened closely to what communities actually needed.
+            </p>
+            <p>
+              We take a holistic approach — we don&apos;t focus on a single issue. Instead, we listen
+              to what communities need most and respond with flexible, scalable programs that make a
+              real difference. From rural education and women&apos;s empowerment to environmental
+              restoration and emergency relief, our work spans the full spectrum of community needs.
+            </p>
+            <p>
+              Today, CBAF operates across 18 states, has impacted 12,400+ lives, and manages 48
+              active projects. We remain committed to our founding vision: communities that are
+              self-reliant, equitable, and resilient.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Values */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <div className="text-center mb-12">
+            <h2 className="font-display text-3xl font-bold text-gray-900">Our Values</h2>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            {[
+              { icon: <Heart className="w-6 h-6 text-red-500" />, title: "Compassion", desc: "We lead with empathy and genuine care for every community we serve." },
+              { icon: <Award className="w-6 h-6 text-amber-500" />, title: "Integrity", desc: "Transparent in our finances, honest in our communication, accountable in our actions." },
+              { icon: <Users className="w-6 h-6 text-blue-500" />, title: "Inclusion", desc: "Every voice matters. We design programs that reach the most marginalized." },
+              { icon: <Globe className="w-6 h-6 text-green-600" />, title: "Sustainability", desc: "We build programs that communities can own, maintain, and scale on their own." },
+            ].map((v) => (
+              <div key={v.title} className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
+                <div className="w-12 h-12 bg-gray-50 rounded-xl flex items-center justify-center mb-4">
+                  {v.icon}
+                </div>
+                <h3 className="font-display font-bold text-gray-900 mb-2">{v.title}</h3>
+                <p className="text-sm text-gray-500 leading-relaxed">{v.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Team */}
+      <section className="py-16 bg-white">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6">
+          <div className="text-center mb-12">
+            <h2 className="font-display text-3xl font-bold text-gray-900">Leadership Team</h2>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            {team.map((member) => (
+              <div key={member.name} className="text-center">
+                <div className="w-20 h-20 bg-gradient-to-br from-green-100 to-blue-100 rounded-full mx-auto mb-3 flex items-center justify-center text-2xl font-bold text-green-700 font-display">
+                  {member.name.split(" ").map((n) => n[0]).join("").slice(0, 2)}
+                </div>
+                <h3 className="font-semibold text-gray-900 text-sm">{member.name}</h3>
+                <p className="text-xs text-green-600 font-medium mb-2">{member.role}</p>
+                <p className="text-xs text-gray-500 leading-relaxed">{member.bio}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}

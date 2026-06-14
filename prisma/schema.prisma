@@ -1,0 +1,305 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ─── AUTH ───────────────────────────────────────
+
+model User {
+  id            String    @id @default(cuid())
+  name          String?
+  email         String    @unique
+  emailVerified DateTime?
+  image         String?
+  role          Role      @default(ADMIN)
+  password      String?
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  accounts  Account[]
+  sessions  Session[]
+  donations CampaignDonation[]
+}
+
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String? @db.Text
+  access_token      String? @db.Text
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String? @db.Text
+  session_state     String?
+  user              User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+}
+
+enum Role {
+  SUPER_ADMIN
+  ADMIN
+  EDITOR
+}
+
+// ─── CAMPAIGNS ───────────────────────────────────
+
+model Campaign {
+  id           String           @id @default(cuid())
+  title        String
+  slug         String           @unique
+  description  String           @db.Text
+  story        String           @db.Text
+  category     CampaignCategory
+  status       CampaignStatus   @default(ACTIVE)
+  goalAmount   Float
+  raisedAmount Float            @default(0)
+  donorCount   Int              @default(0)
+  startDate    DateTime         @default(now())
+  endDate      DateTime?
+  isFeatured   Boolean          @default(false)
+  isUrgent     Boolean          @default(false)
+  isTrending   Boolean          @default(false)
+  coverImage   String?
+  gallery      String[]
+  beneficiaries Int?
+  metaTitle    String?
+  metaDesc     String?
+  createdAt    DateTime         @default(now())
+  updatedAt    DateTime         @updatedAt
+
+  donations CampaignDonation[]
+  updates   CampaignUpdate[]
+}
+
+model CampaignUpdate {
+  id         String   @id @default(cuid())
+  campaignId String
+  title      String
+  content    String   @db.Text
+  images     String[]
+  createdAt  DateTime @default(now())
+
+  campaign Campaign @relation(fields: [campaignId], references: [id], onDelete: Cascade)
+}
+
+model CampaignDonation {
+  id            String        @id @default(cuid())
+  campaignId    String
+  userId        String?
+  donorName     String
+  donorEmail    String
+  donorPhone    String?
+  amount        Float
+  currency      String        @default("INR")
+  message       String?
+  isAnonymous   Boolean       @default(false)
+  paymentMethod PaymentMethod @default(RAZORPAY)
+  paymentId     String?       @unique
+  orderId       String?
+  status        PaymentStatus @default(PENDING)
+  receiptSent   Boolean       @default(false)
+  createdAt     DateTime      @default(now())
+
+  campaign Campaign @relation(fields: [campaignId], references: [id])
+  user     User?    @relation(fields: [userId], references: [id])
+
+  @@index([campaignId])
+  @@index([donorEmail])
+  @@index([status])
+}
+
+enum CampaignCategory {
+  EDUCATION
+  WOMEN_EMPOWERMENT
+  HEALTHCARE
+  ENVIRONMENT
+  EMERGENCY_RELIEF
+  CHILD_WELFARE
+  LIVELIHOOD
+  OTHER
+}
+
+enum CampaignStatus {
+  DRAFT
+  ACTIVE
+  COMPLETED
+  PAUSED
+  CANCELLED
+}
+
+enum PaymentMethod {
+  UPI
+  CARD
+  NET_BANKING
+  RAZORPAY
+  OFFLINE
+}
+
+enum PaymentStatus {
+  PENDING
+  SUCCESS
+  FAILED
+  REFUNDED
+}
+
+// ─── PROJECTS ────────────────────────────────────
+
+model Project {
+  id            String        @id @default(cuid())
+  title         String
+  slug          String        @unique
+  description   String        @db.Text
+  category      String
+  status        ProjectStatus @default(ONGOING)
+  budget        Float?
+  spent         Float         @default(0)
+  beneficiaries Int?
+  startDate     DateTime?
+  endDate       DateTime?
+  location      String?
+  coverImage    String?
+  gallery       String[]
+  isFeatured    Boolean       @default(false)
+  impactMetrics Json?
+  metaTitle     String?
+  metaDesc      String?
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime      @updatedAt
+}
+
+enum ProjectStatus {
+  UPCOMING
+  ONGOING
+  COMPLETED
+  ON_HOLD
+}
+
+// ─── VOLUNTEERS ──────────────────────────────────
+
+model Volunteer {
+  id           String          @id @default(cuid())
+  name         String
+  email        String          @unique
+  phone        String
+  city         String
+  state        String?
+  skills       String[]
+  interests    String[]
+  availability VolunteerAvail  @default(FLEXIBLE)
+  status       VolunteerStatus @default(PENDING)
+  notes        String?
+  joinedAt     DateTime        @default(now())
+  updatedAt    DateTime        @updatedAt
+}
+
+enum VolunteerAvail {
+  WEEKDAYS
+  WEEKENDS
+  BOTH
+  FLEXIBLE
+}
+
+enum VolunteerStatus {
+  PENDING
+  APPROVED
+  ACTIVE
+  INACTIVE
+}
+
+// ─── SUBSCRIBERS ─────────────────────────────────
+
+model Subscriber {
+  id           String           @id @default(cuid())
+  email        String           @unique
+  name         String?
+  status       SubscriberStatus @default(ACTIVE)
+  source       String?
+  subscribedAt DateTime         @default(now())
+}
+
+enum SubscriberStatus {
+  ACTIVE
+  UNSUBSCRIBED
+}
+
+// ─── CONTACT MESSAGES ────────────────────────────
+
+model ContactMessage {
+  id        String        @id @default(cuid())
+  name      String
+  email     String
+  phone     String?
+  subject   String
+  message   String        @db.Text
+  status    MessageStatus @default(UNREAD)
+  repliedAt DateTime?
+  createdAt DateTime      @default(now())
+}
+
+enum MessageStatus {
+  UNREAD
+  READ
+  REPLIED
+  ARCHIVED
+}
+
+// ─── IMPACT ──────────────────────────────────────
+
+model ImpactMetric {
+  id         String   @id @default(cuid())
+  label      String
+  value      Float
+  unit       String?
+  icon       String?
+  category   String
+  recordedAt DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+}
+
+// ─── FUND PREDICTIONS ────────────────────────────
+
+model FundPrediction {
+  id                  String   @id @default(cuid())
+  activeDonors        Int
+  avgDonation         Float
+  campaignCount       Int
+  socialReach         Int
+  volunteerCount      Int
+  eventParticipation  Int
+  prevYearFunding     Float
+  monthlyVisitors     Int
+  emailSubscribers    Int
+  predictedMonthly    Float
+  predictedAnnual     Float
+  growthRate          Float
+  fundingHealthScore  Float
+  sustainabilityScore Float
+  riskLevel           String
+  actualMonthly       Float?
+  modelVersion        String   @default("v1.0-heuristic")
+  createdAt           DateTime @default(now())
+}
