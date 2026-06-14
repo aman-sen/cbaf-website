@@ -16,7 +16,16 @@ export async function POST(req: NextRequest) {
   const result = ContactSchema.safeParse(body);
   if (!result.success) return NextResponse.json({ error: result.error.flatten() }, { status: 400 });
 
-  const msg = await prisma.contactMessage.create({ data: result.data });
+  // const msg = await prisma.contactMessage.create({ data: result.data });
+  const msg = await prisma.contactMessage.create({
+  data: result.data as {
+    name: string;
+    email: string;
+    phone?: string;
+    subject: string;
+    message: string;
+  },
+});
   sendContactConfirmation(result.data.name, result.data.email).catch(console.error);
 
   return NextResponse.json({ success: true, id: msg.id }, { status: 201 });

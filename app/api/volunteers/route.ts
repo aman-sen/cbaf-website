@@ -17,7 +17,8 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Email already registered as volunteer" }, { status: 409 });
   }
 
-  const volunteer = await prisma.volunteer.create({ data: result.data });
+  // const volunteer = await prisma.volunteer.create({ data: result.data });
+  const volunteer = await prisma.volunteer.create({ data: result.data as any });
 
   sendVolunteerConfirmation({ name: volunteer.name, email: volunteer.email }).catch(console.error);
 

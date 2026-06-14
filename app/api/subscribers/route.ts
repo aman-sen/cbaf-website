@@ -23,7 +23,8 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ success: true, already: true });
   }
 
-  await prisma.subscriber.create({ data: result.data });
+  // await prisma.subscriber.create({ data: result.data });
+  await prisma.subscriber.create({ data: result.data as any });
   sendNewsletterConfirmation(result.data.email).catch(console.error);
 
   return NextResponse.json({ success: true }, { status: 201 });

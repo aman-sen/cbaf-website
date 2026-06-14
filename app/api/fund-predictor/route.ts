@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
-import { calculateFundPrediction } from "@/lib/fund-predictor";
+// import { calculateFundPrediction } from "@/lib/fund-predictor";
+import { calculateFundPrediction, PredictorInputs } from "@/lib/fund-predictor";
 import { z } from "zod";
 
 const InputSchema = z.object({
@@ -23,7 +24,8 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "Invalid inputs" }, { status: 400 });
     }
 
-    const prediction = calculateFundPrediction(result.data);
+    // const prediction = calculateFundPrediction(result.data);
+    const prediction = calculateFundPrediction(result.data as PredictorInputs);
 
     // Try ML service if configured
     if (process.env.ML_SERVICE_URL) {
@@ -56,7 +58,8 @@ export async function POST(req: NextRequest) {
     // Save to DB (exclude computed monthlyForecast array)
     const { monthlyForecast, breakdown, ...dbData } = prediction;
     prisma.fundPrediction
-      .create({ data: { ...result.data, ...dbData } })
+      // .create({ data: { ...result.data, ...dbData } })
+      .create({ data: { ...result.data, ...dbData } as any })
       .catch(() => {});  // fire-and-forget
 
     return NextResponse.json(prediction);
