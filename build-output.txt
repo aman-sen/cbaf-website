@@ -1,0 +1,83 @@
+
+> cbaf-website@1.0.0 build
+> prisma generate && next build
+
+Environment variables loaded from .env
+Prisma schema loaded from prisma/schema.prisma
+
+✔ Generated Prisma Client (v5.22.0) to ./node_modules/@prisma/client in 89ms
+
+Start by importing your Prisma Client (See: https://pris.ly/d/importing-client)
+
+Tip: Curious about the SQL queries Prisma ORM generates? Optimize helps you enhance your visibility: https://pris.ly/tip-2-optimize
+
+  ▲ Next.js 14.2.35
+  - Environments: .env.local, .env
+
+   Creating an optimized production build ...
+ ✓ Compiled successfully
+   Linting and checking validity of types ...
+   Collecting page data ...
+   Generating static pages (0/41) ...
+   Generating static pages (10/41) 
+   Generating static pages (20/41) 
+   Generating static pages (30/41) 
+ ✓ Generating static pages (41/41)
+   Finalizing page optimization ...
+   Collecting build traces ...
+
+Route (app)                              Size     First Load JS
+┌ ○ /                                    10.5 kB         148 kB
+├ ○ /_not-found                          880 B          88.4 kB
+├ ○ /about                               168 B          87.7 kB
+├ ƒ /admin                               846 B           186 kB
+├ ƒ /admin/analytics                     846 B           186 kB
+├ ƒ /admin/campaigns                     185 B          96.4 kB
+├ ƒ /admin/donations                     169 B          87.7 kB
+├ ƒ /admin/login                         2.06 kB        99.3 kB
+├ ƒ /admin/projects                      185 B          96.4 kB
+├ ƒ /admin/subscribers                   169 B          87.7 kB
+├ ƒ /admin/volunteers                    168 B          87.7 kB
+├ ƒ /api/auth/[...nextauth]              0 B                0 B
+├ ƒ /api/campaigns                       0 B                0 B
+├ ƒ /api/campaigns/[id]                  0 B                0 B
+├ ƒ /api/contact                         0 B                0 B
+├ ƒ /api/donations                       0 B                0 B
+├ ƒ /api/fund-predictor                  0 B                0 B
+├ ○ /api/impact                          0 B                0 B
+├ ƒ /api/payment/create-order            0 B                0 B
+├ ƒ /api/payment/verify                  0 B                0 B
+├ ƒ /api/projects                        0 B                0 B
+├ ƒ /api/subscribers                     0 B                0 B
+├ ƒ /api/volunteers                      0 B                0 B
+├ ○ /campaigns                           4.82 kB         142 kB
+├ ƒ /campaigns/[slug]                    4.93 kB         142 kB
+├ ○ /contact                             2.38 kB         113 kB
+├ ○ /donate                              2.72 kB        90.3 kB
+├ ○ /fund-predictor                      9.52 kB         254 kB
+├ ○ /gallery                             167 B          87.7 kB
+├ ○ /impact                              1.35 kB         125 kB
+├ ○ /news                                168 B          87.7 kB
+├ ○ /payment-failed                      185 B          96.4 kB
+├ ○ /payment-success                     185 B          96.4 kB
+├ ○ /privacy-policy                      167 B          87.7 kB
+├ ○ /projects                            190 B           102 kB
+├ ƒ /projects/[slug]                     190 B           102 kB
+├ ○ /refund-policy                       169 B          87.7 kB
+├ ○ /robots.txt                          0 B                0 B
+├ ○ /shipping-policy                     167 B          87.7 kB
+├ ○ /sitemap.xml                         0 B                0 B
+├ ○ /terms-and-conditions                167 B          87.7 kB
+├ ○ /vision-mission                      166 B          87.7 kB
+└ ○ /volunteer                           2.78 kB         149 kB
++ First Load JS shared by all            87.5 kB
+  ├ chunks/117-a1164beebc333298.js       31.9 kB
+  ├ chunks/fd9d1056-83811740eb3c2b2a.js  53.7 kB
+  └ other shared chunks (total)          1.99 kB
+
+
+ƒ Middleware                             49.1 kB
+
+○  (Static)   prerendered as static content
+ƒ  (Dynamic)  server-rendered on demand
+

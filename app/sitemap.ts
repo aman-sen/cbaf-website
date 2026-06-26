@@ -15,7 +15,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: "/vision-mission", priority: 0.8, freq: "monthly" },
     { url: "/campaigns", priority: 0.9, freq: "daily" },
     { url: "/projects", priority: 0.8, freq: "weekly" },
-    { url: "/fund-predictor", priority: 0.7, freq: "monthly" },
+    // { url: "/fund-predictor", priority: 0.7, freq: "monthly" },
     { url: "/impact", priority: 0.8, freq: "weekly" },
     { url: "/volunteer", priority: 0.8, freq: "monthly" },
     { url: "/donate", priority: 1.0, freq: "daily" },

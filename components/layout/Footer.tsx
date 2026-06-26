@@ -20,7 +20,7 @@ const QUICK_LINKS = [
 const GET_INVOLVED = [
   { label: "Donate Now",         href: "/donate" },
   { label: "Become a Volunteer", href: "/volunteer" },
-  { label: "Fund Predictor",     href: "/fund-predictor" },
+  // { label: "Fund Predictor",     href: "/fund-predictor" },
   { label: "Corporate CSR",      href: "/contact" },
   { label: "Contact Us",         href: "/contact" },
 ];
