@@ -33,7 +33,7 @@ export default function ContactPage() {
   const contactInfo = [
     { icon: Phone, label: "Phone", value: "+91 85297 16474", href: "tel:+918529716474" },
     { icon: Mail, label: "Email", value: "info@communityfoundation.in", href: "mailto:info@communityfoundation.in" },
-    { icon: MapPin, label: "Office", value: "Community Base Advancement Foundation, Bihar, India" },
+    { icon: MapPin, label: "Office", value: "Shyam Vihar Kakrola, South West Delhi, Delhi 110078" },
     { icon: Clock, label: "Hours", value: "Mon–Sat: 9 AM – 6 PM IST" },
   ];
 

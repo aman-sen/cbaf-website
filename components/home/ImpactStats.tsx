@@ -4,13 +4,13 @@ import { motion } from "framer-motion";
 
 const stats = [
   { icon: "💰", target: 28000000, label: "Total Funds Raised", format: (v: number) => `₹${(v / 10000000).toFixed(1)}Cr+` },
-  { icon: "👥", target: 12400, label: "Lives Impacted", format: (v: number) => `${Math.round(v).toLocaleString("en-IN")}+` },
-  { icon: "🌳", target: 8500, label: "Trees Planted", format: (v: number) => `${Math.round(v).toLocaleString("en-IN")}+` },
-  { icon: "👩", target: 3200, label: "Women Empowered", format: (v: number) => `${Math.round(v).toLocaleString("en-IN")}+` },
-  { icon: "📚", target: 5800, label: "Students Educated", format: (v: number) => `${Math.round(v).toLocaleString("en-IN")}+` },
-  { icon: "🤝", target: 320, label: "Active Volunteers", format: (v: number) => `${Math.round(v)}+` },
-  { icon: "🏕️", target: 124, label: "Campaigns Completed", format: (v: number) => `${Math.round(v)}` },
-  { icon: "🗺️", target: 48, label: "Districts Reached", format: (v: number) => `${Math.round(v)}` },
+  { icon: "👥", target: 6200, label: "Lives Impacted", format: (v: number) => `${Math.round(v).toLocaleString("en-IN")}+` },
+  { icon: "🌳", target: 5000, label: "Trees Planted", format: (v: number) => `${Math.round(v).toLocaleString("en-IN")}+` },
+  { icon: "👩", target: 1000, label: "Women Empowered", format: (v: number) => `${Math.round(v).toLocaleString("en-IN")}+` },
+  { icon: "📚", target: 1100, label: "Students Educated", format: (v: number) => `${Math.round(v).toLocaleString("en-IN")}+` },
+  { icon: "🤝", target: 100, label: "Active Volunteers", format: (v: number) => `${Math.round(v)}+` },
+  { icon: "🏕️", target: 50, label: "Campaigns Completed", format: (v: number) => `${Math.round(v)}` },
+  { icon: "🗺️", target: 6, label: "Districts Reached", format: (v: number) => `${Math.round(v)}` },
 ];
 
 function Counter({ target, format }: { target: number; format: (v: number) => string }) {

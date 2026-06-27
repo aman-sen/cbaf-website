@@ -204,13 +204,13 @@ async function main() {
   // ── Impact Metrics ──────────────────────────────────────────────────────────
   const metrics = [
     { label: "Total Funds Raised",   value: 28000000, unit: "INR",       icon: "💰", category: "financial"    },
-    { label: "Lives Impacted",       value: 12400,    unit: "people",    icon: "👥", category: "beneficiaries" },
-    { label: "Trees Planted",        value: 8500,     unit: "trees",     icon: "🌳", category: "environment"   },
-    { label: "Women Empowered",      value: 3200,     unit: "women",     icon: "👩", category: "empowerment"   },
-    { label: "Students Educated",    value: 5800,     unit: "students",  icon: "📚", category: "education"     },
-    { label: "Active Volunteers",    value: 320,      unit: "volunteers",icon: "🤝", category: "volunteers"    },
-    { label: "Campaigns Completed",  value: 124,      unit: "campaigns", icon: "🏕️", category: "campaigns"    },
-    { label: "Districts Reached",    value: 48,       unit: "districts", icon: "🗺️", category: "reach"        },
+    { label: "Lives Impacted",       value: 6200,    unit: "people",    icon: "👥", category: "beneficiaries" },
+    { label: "Trees Planted",        value: 5000,     unit: "trees",     icon: "🌳", category: "environment"   },
+    { label: "Women Empowered",      value: 1000,     unit: "women",     icon: "👩", category: "empowerment"   },
+    { label: "Students Educated",    value: 1100,     unit: "students",  icon: "📚", category: "education"     },
+    { label: "Active Volunteers",    value: 100,      unit: "volunteers",icon: "🤝", category: "volunteers"    },
+    { label: "Campaigns Completed",  value: 50,      unit: "campaigns", icon: "🏕️", category: "campaigns"    },
+    { label: "Districts Reached",    value: 6,       unit: "districts", icon: "🗺️", category: "reach"        },
   ];
 
   for (const metric of metrics) {

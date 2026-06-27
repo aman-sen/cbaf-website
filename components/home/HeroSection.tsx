@@ -30,9 +30,9 @@ const slides = [
 
 const heroStats = [
   { value: "₹2.8Cr+", label: "Funds Raised" },
-  { value: "12,400+", label: "Beneficiaries" },
+  { value: "6,200+", label: "Beneficiaries" },
   { value: "48", label: "Active Campaigns" },
-  { value: "320+", label: "Volunteers" },
+  { value: "100+", label: "Volunteers" },
 ];
 
 export function HeroSection() {

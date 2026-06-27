@@ -115,7 +115,7 @@ export function Footer() {
 </div>
 
             <p className="text-sm leading-relaxed mb-4 text-gray-500">
-              Equipping, connecting, and supporting communities across India since 2015.
+              Shyam Vihar Kakrola, South West Delhi, Delhi 110078
             </p>
             <div className="space-y-2 text-sm">
               <div className="flex items-center gap-2">

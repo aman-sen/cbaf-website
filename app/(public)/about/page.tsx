@@ -26,7 +26,7 @@ export default function AboutPage() {
             Built on Belief, Driven by Purpose
           </h1>
           <p className="text-gray-300 text-lg leading-relaxed">
-            Since 2015, we have been working at the intersection of community development,
+            Since 2022, we have been working at the intersection of community development,
             education, and empowerment to create lasting change in India.
           </p>
         </div>
@@ -42,8 +42,8 @@ export default function AboutPage() {
               that truly strong communities are built when people are equipped, connected, and supported.
             </p>
             <p>
-              Founded in 2015 by a group of development professionals and social entrepreneurs, CBAF
-              started with a single women&apos;s skill development program in Gaya, Bihar. What began
+              Founded in 2022 by a group of development professionals and social entrepreneurs, CBAF
+              started with a single women&apos;s skill development program in Shyam Vihar Kakrola, South West Delhi, Delhi. What began
               as a small vocational training initiative quickly grew into a comprehensive community
               development platform as we listened closely to what communities actually needed.
             </p>
@@ -54,7 +54,7 @@ export default function AboutPage() {
               restoration and emergency relief, our work spans the full spectrum of community needs.
             </p>
             <p>
-              Today, CBAF operates across 18 states, has impacted 12,400+ lives, and manages 48
+              Today, CBAF operates across 18 states, has impacted 6,200+ lives, and manages 48
               active projects. We remain committed to our founding vision: communities that are
               self-reliant, equitable, and resilient.
             </p>

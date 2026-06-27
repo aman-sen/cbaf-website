@@ -51,6 +51,7 @@ export async function sendDonationReceipt(donation: {
       <div style="margin-top:24px;padding-top:24px;border-top:1px solid #e5e7eb;text-align:center;">
         <p style="color:#374151;font-size:14px;margin:0;"><strong>Community Base Advancement Foundation</strong></p>
         <p style="color:#6b7280;font-size:13px;margin:4px 0;">+91 85297 16474 | info@communityfoundation.in</p>
+        <p style="color:#6b7280;font-size:13px;margin:4px 0;">Shyam Vihar Kakrola, South West Delhi, Delhi 110078</p>
       </div>
     </div>
   </div>
