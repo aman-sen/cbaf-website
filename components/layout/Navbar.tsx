@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -44,9 +45,13 @@ export function Navbar() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 flex-shrink-0">
-            <div className="w-9 h-9 bg-gradient-to-br from-green-600 to-blue-600 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold font-display text-lg">C</span>
-            </div>
+            <Image
+    src="/icons/logo.png"
+    alt="CBAF Logo"
+    width={40}
+    height={40}
+    className="rounded-lg object-contain"
+    />
             <div className="hidden sm:block">
               <div className="font-display font-bold text-gray-900 text-sm leading-tight">
                 Community Base Advancement

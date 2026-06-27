@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import Link          from "next/link";
 import { useState }  from "react";
 import {
@@ -89,7 +90,7 @@ export function Footer() {
 
           {/* Brand */}
           <div>
-            <div className="flex items-center gap-3 mb-4">
+            {/* <div className="flex items-center gap-3 mb-4">
               <div className="w-9 h-9 bg-gradient-to-br from-green-600 to-blue-600 rounded-lg flex items-center justify-center flex-shrink-0">
                 <span className="text-white font-bold font-display text-lg">C</span>
               </div>
@@ -97,7 +98,22 @@ export function Footer() {
                 <div className="text-white font-bold text-sm leading-tight">Community Base Advancement</div>
                 <div className="text-xs text-gray-500">Foundation</div>
               </div>
-            </div>
+            </div> */}
+
+            <div className="flex items-center gap-3 mb-4">
+  <Image
+    src="/icons/logo.png"
+    alt="CBAF Logo"
+    width={40}
+    height={40}
+    className="rounded-lg object-contain"
+  />
+  <div>
+    <div className="text-white font-bold text-sm leading-tight">Community Base Advancement</div>
+    <div className="text-xs text-gray-500">Foundation</div>
+  </div>
+</div>
+
             <p className="text-sm leading-relaxed mb-4 text-gray-500">
               Equipping, connecting, and supporting communities across India since 2015.
             </p>
