@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 const STATUS_STYLES: Record<string, string> = {
   UPCOMING:  "bg-gray-100 text-gray-600",
-  ONGOING:   "bg-green-100 text-green-700",
+  ONGOING:   "bg-blue-100 text-blue-700",
   COMPLETED: "bg-blue-100 text-blue-700",
   ON_HOLD:   "bg-amber-100 text-amber-700",
 };
@@ -64,7 +64,7 @@ export default async function ProjectsPage() {
                   key={project.id}
                   className="bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col"
                 >
-                  <div className="relative h-44 bg-gradient-to-br from-green-50 to-blue-50">
+                  <div className="relative h-44 bg-gradient-to-br from-blue-50 to-blue-100">
                     {project.coverImage ? (
                       <Image
                         src={project.coverImage}
@@ -103,7 +103,7 @@ export default async function ProjectsPage() {
                     )}
                     {project.beneficiaries && (
                       <div className="flex items-center gap-1.5 text-xs text-gray-500 mb-3">
-                        <Users className="w-3.5 h-3.5 text-green-500" />
+                        <Users className="w-3.5 h-3.5 text-blue-500" />
                         {project.beneficiaries.toLocaleString("en-IN")} beneficiaries
                       </div>
                     )}
@@ -116,7 +116,7 @@ export default async function ProjectsPage() {
                         </div>
                         <div className="h-1.5 bg-gray-100 rounded-full overflow-hidden">
                           <div
-                            className="h-full bg-green-500 rounded-full"
+                            className="h-full bg-blue-500 rounded-full"
                             style={{ width: `${Math.min(progress, 100)}%` }}
                           />
                         </div>
@@ -129,7 +129,7 @@ export default async function ProjectsPage() {
                           .slice(0, 2)
                           .map(([key, val]) => (
                             <div key={key} className="bg-gray-50 rounded-lg p-2 text-center">
-                              <div className="font-display font-bold text-green-600 text-sm">
+                              <div className="font-display font-bold text-blue-600 text-sm">
                                 {String(val)}
                               </div>
                               <div className="text-xs text-gray-400 capitalize">
@@ -142,7 +142,7 @@ export default async function ProjectsPage() {
 
                     <Link
                       href={`/projects/${project.slug}`}
-                      className="block text-center border border-green-600 text-green-700 hover:bg-green-600 hover:text-white text-sm font-semibold py-2.5 rounded-xl transition-all"
+                      className="block text-center border border-blue-600 text-blue-700 hover:bg-blue-600 hover:text-white text-sm font-semibold py-2.5 rounded-xl transition-all"
                     >
                       View Project →
                     </Link>

@@ -7,7 +7,7 @@ const testimonials = [
     name: "Priya Raghunathan",
     role: "Beneficiary, Women's Skill Program",
     initials: "PR",
-    color: "bg-green-600",
+    color: "bg-blue-600",
     stars: 5,
   },
   {
@@ -57,7 +57,7 @@ export function Testimonials() {
     <section className="py-16 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="text-center mb-12">
-          <span className="inline-block bg-green-100 text-green-700 text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-md mb-4">
+          <span className="inline-block bg-blue-100 text-blue-700 text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-md mb-4">
             Testimonials
           </span>
           <h2 className="font-display text-3xl sm:text-4xl font-bold text-gray-900 mb-3">

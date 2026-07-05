@@ -14,9 +14,9 @@ const pillars = [
     icon: "🚪",
     title: "Advancing Opportunity",
     description: "We open doors to better education for children, livelihoods for women, and local partnerships that create a brighter future.",
-    color: "from-green-50 to-green-100",
-    border: "border-green-100",
-    badge: "bg-green-100 text-green-700",
+    color: "from-blue-50 to-blue-100",
+    border: "border-blue-100",
+    badge: "bg-blue-100 text-blue-700",
   },
   {
     icon: "🛡️",
@@ -41,7 +41,7 @@ export function CorePillars() {
     <section className="py-16 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="text-center mb-12">
-          <span className="inline-block bg-green-100 text-green-700 text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-md mb-4">
+          <span className="inline-block bg-blue-100 text-blue-700 text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-md mb-4">
             Our Approach
           </span>
           <h2 className="font-display text-3xl sm:text-4xl font-bold text-gray-900 mb-3">

@@ -17,9 +17,9 @@ export default function AboutPage() {
   return (
     <div>
       {/* Hero */}
-      <div className="bg-gradient-to-br from-slate-900 to-green-950 py-20 px-4">
+      <div className="bg-gradient-to-br from-slate-900 to-blue-950 py-20 px-4">
         <div className="max-w-3xl mx-auto text-center">
-          <span className="inline-block bg-green-500/20 text-green-400 text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-md mb-4 border border-green-500/30">
+          <span className="inline-block bg-blue-500/20 text-blue-400 text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-md mb-4 border border-blue-500/30">
             About Us
           </span>
           <h1 className="font-display text-4xl sm:text-5xl font-bold text-white mb-4">
@@ -73,7 +73,7 @@ export default function AboutPage() {
               { icon: <Heart className="w-6 h-6 text-red-500" />, title: "Compassion", desc: "We lead with empathy and genuine care for every community we serve." },
               { icon: <Award className="w-6 h-6 text-amber-500" />, title: "Integrity", desc: "Transparent in our finances, honest in our communication, accountable in our actions." },
               { icon: <Users className="w-6 h-6 text-blue-500" />, title: "Inclusion", desc: "Every voice matters. We design programs that reach the most marginalized." },
-              { icon: <Globe className="w-6 h-6 text-green-600" />, title: "Sustainability", desc: "We build programs that communities can own, maintain, and scale on their own." },
+              { icon: <Globe className="w-6 h-6 text-blue-600" />, title: "Sustainability", desc: "We build programs that communities can own, maintain, and scale on their own." },
             ].map((v) => (
               <div key={v.title} className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
                 <div className="w-12 h-12 bg-gray-50 rounded-xl flex items-center justify-center mb-4">
@@ -96,11 +96,11 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {team.map((member) => (
               <div key={member.name} className="text-center">
-                <div className="w-20 h-20 bg-gradient-to-br from-green-100 to-blue-100 rounded-full mx-auto mb-3 flex items-center justify-center text-2xl font-bold text-green-700 font-display">
+                <div className="w-20 h-20 bg-gradient-to-br from-blue-100 to-blue-200 rounded-full mx-auto mb-3 flex items-center justify-center text-2xl font-bold text-blue-700 font-display">
                   {member.name.split(" ").map((n) => n[0]).join("").slice(0, 2)}
                 </div>
                 <h3 className="font-semibold text-gray-900 text-sm">{member.name}</h3>
-                <p className="text-xs text-green-600 font-medium mb-2">{member.role}</p>
+                <p className="text-xs text-blue-600 font-medium mb-2">{member.role}</p>
                 <p className="text-xs text-gray-500 leading-relaxed">{member.bio}</p>
               </div>
             ))}

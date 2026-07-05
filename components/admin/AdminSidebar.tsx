@@ -25,7 +25,7 @@ export function AdminSidebar() {
       {/* Logo */}
       <div className="p-5 border-b border-gray-800">
         <div className="flex items-center gap-3">
-          <div className="w-8 h-8 bg-gradient-to-br from-green-600 to-blue-600 rounded-lg flex items-center justify-center flex-shrink-0">
+          <div className="w-8 h-8 bg-gradient-to-br from-blue-600 to-blue-800 rounded-lg flex items-center justify-center flex-shrink-0">
             <span className="text-white font-bold font-display text-sm">C</span>
           </div>
           <div>
@@ -43,7 +43,7 @@ export function AdminSidebar() {
             <Link key={href} href={href}
               className={`flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all ${
                 isActive
-                  ? "bg-green-600 text-white"
+                  ? "bg-blue-600 text-white"
                   : "text-gray-400 hover:text-white hover:bg-gray-800"
               }`}>
               <Icon className="w-4 h-4 flex-shrink-0" />

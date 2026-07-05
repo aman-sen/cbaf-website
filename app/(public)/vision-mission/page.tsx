@@ -16,10 +16,10 @@ export default function VisionMissionPage() {
       <section className="py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 space-y-12">
           {/* Vision */}
-          <div className="bg-gradient-to-br from-green-50 to-green-100 rounded-3xl p-8 sm:p-12 border border-green-200">
+          <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-3xl p-8 sm:p-12 border border-blue-200">
             <div className="text-5xl mb-5">🌟</div>
-            <h2 className="font-display text-3xl font-bold text-green-900 mb-4">Our Vision</h2>
-            <p className="text-green-800 text-lg leading-relaxed">
+            <h2 className="font-display text-3xl font-bold text-blue-900 mb-4">Our Vision</h2>
+            <p className="text-blue-800 text-lg leading-relaxed">
               A world where every community — regardless of geography, gender, or economic status —
               has access to the resources, knowledge, and opportunities needed to thrive with dignity
               and self-determination.

@@ -34,7 +34,7 @@ export function Newsletter() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
-          className="bg-gradient-to-br from-green-600 via-green-700 to-blue-700 rounded-3xl p-8 sm:p-12 text-center relative overflow-hidden"
+          className="bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 rounded-3xl p-8 sm:p-12 text-center relative overflow-hidden"
         >
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(255,255,255,0.1),transparent_60%)]" />
           <div className="relative z-10">
@@ -54,7 +54,7 @@ export function Newsletter() {
                 animate={{ scale: 1, opacity: 1 }}
                 className="flex items-center justify-center gap-3 bg-white/20 rounded-2xl py-4 px-6 max-w-sm mx-auto"
               >
-                <CheckCircle className="w-5 h-5 text-green-300" />
+                <CheckCircle className="w-5 h-5 text-blue-300" />
                 <span className="text-white font-semibold text-sm">
                   Thank you! You are now part of our mission.
                 </span>

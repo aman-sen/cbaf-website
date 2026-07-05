@@ -42,7 +42,7 @@ export default function PrivacyPolicyPage() {
             <li><strong>Service:</strong> refers to the Website.</li>
             <li><strong>Service Provider:</strong> any person or company processing data on behalf of the Company.</li>
             <li><strong>Usage Data:</strong> data collected automatically from the Service.</li>
-            <li><strong>Website:</strong> COMMUNITY BASE ADVANCEMENT FOUNDATION, accessible from <a href="https://communityfoundation.in" className="text-green-600 hover:underline">https://communityfoundation.in</a>.</li>
+            <li><strong>Website:</strong> COMMUNITY BASE ADVANCEMENT FOUNDATION, accessible from <a href="https://communityfoundation.in" className="text-blue-600 hover:underline">https://communityfoundation.in</a>.</li>
             <li><strong>You:</strong> the individual accessing or using the Service or the legal entity they represent.</li>
           </ul>
         </section>
@@ -190,9 +190,9 @@ export default function PrivacyPolicyPage() {
         <section>
           <h2 className="font-display text-xl font-bold text-gray-900">14. Contact Us</h2>
           <p>
-            Email: <a href="mailto:info@communityfoundation.in" className="text-green-600 hover:underline">info@communityfoundation.in</a>
+            Email: <a href="mailto:info@communityfoundation.in" className="text-blue-600 hover:underline">info@communityfoundation.in</a>
             <br />
-            Phone: <a href="tel:+918529716474" className="text-green-600 hover:underline">+91-8529716474</a>
+            Phone: <a href="tel:+918529716474" className="text-blue-600 hover:underline">+91-8529716474</a>
           </p>
         </section>
 

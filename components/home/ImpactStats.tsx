@@ -49,10 +49,10 @@ function Counter({ target, format }: { target: number; format: (v: number) => st
 
 export function ImpactStats() {
   return (
-    <section className="py-16 bg-gradient-to-br from-slate-900 via-green-950 to-slate-900">
+    <section className="py-16 bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="text-center mb-12">
-          <span className="inline-block bg-green-500/20 text-green-400 text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-md mb-4 border border-green-500/30">
+          <span className="inline-block bg-blue-500/20 text-blue-400 text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-md mb-4 border border-blue-500/30">
             Our Impact
           </span>
           <h2 className="font-display text-3xl sm:text-4xl font-bold text-white mb-3">

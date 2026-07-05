@@ -63,9 +63,9 @@ export default async function CampaignDetailPage({ params }: Props) {
       {/* Breadcrumb */}
       <div className="bg-white border-b border-gray-100 py-3 px-4">
         <div className="max-w-7xl mx-auto text-sm text-gray-500">
-          <Link href="/" className="hover:text-green-600">Home</Link>
+          <Link href="/" className="hover:text-blue-600">Home</Link>
           {" / "}
-          <Link href="/campaigns" className="hover:text-green-600">Campaigns</Link>
+          <Link href="/campaigns" className="hover:text-blue-600">Campaigns</Link>
           {" / "}
           <span className="text-gray-800 font-medium">{campaign.title}</span>
         </div>
@@ -75,7 +75,7 @@ export default async function CampaignDetailPage({ params }: Props) {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Main */}
           <div className="lg:col-span-2 space-y-6">
-            <div className="relative h-72 sm:h-96 rounded-2xl overflow-hidden bg-gradient-to-br from-green-50 to-blue-50">
+            <div className="relative h-72 sm:h-96 rounded-2xl overflow-hidden bg-gradient-to-br from-blue-50 to-blue-100">
               {campaign.coverImage && (
                 <Image
                   src={campaign.coverImage}
@@ -98,7 +98,7 @@ export default async function CampaignDetailPage({ params }: Props) {
               </h1>
               <div className="flex flex-wrap gap-4 text-sm text-gray-500 mb-4">
                 <span className="flex items-center gap-1.5">
-                  <Users className="w-4 h-4 text-green-600" />
+                  <Users className="w-4 h-4 text-blue-600" />
                   {campaign.donorCount.toLocaleString("en-IN")} donors
                 </span>
                 {daysLeft !== null && (
@@ -134,7 +134,7 @@ export default async function CampaignDetailPage({ params }: Props) {
                 </h2>
                 <div className="space-y-5">
                   {campaign.updates.map((update) => (
-                    <div key={update.id} className="border-l-2 border-green-200 pl-4">
+                    <div key={update.id} className="border-l-2 border-blue-200 pl-4">
                       <div className="text-xs text-gray-400 mb-1">
                         {new Date(update.createdAt).toLocaleDateString("en-IN", {
                           day:   "numeric",
@@ -156,7 +156,7 @@ export default async function CampaignDetailPage({ params }: Props) {
                 <p className="text-sm font-semibold text-gray-700 mb-2">Share this campaign</p>
                 <div className="flex gap-2 flex-wrap">
                   {[
-                    { label: "WhatsApp", color: "bg-green-500", href: `https://wa.me/?text=${encodeURIComponent(`Support: ${siteUrl}/campaigns/${campaign.slug}`)}` },
+                    { label: "WhatsApp", color: "bg-blue-500", href: `https://wa.me/?text=${encodeURIComponent(`Support: ${siteUrl}/campaigns/${campaign.slug}`)}` },
                     { label: "Twitter",  color: "bg-blue-400",  href: `https://twitter.com/intent/tweet?text=${encodeURIComponent(campaign.title)}&url=${siteUrl}/campaigns/${campaign.slug}` },
                     { label: "Facebook", color: "bg-blue-600",  href: `https://www.facebook.com/sharer/sharer.php?u=${siteUrl}/campaigns/${campaign.slug}` },
                   ].map((s) => (
@@ -181,7 +181,7 @@ export default async function CampaignDetailPage({ params }: Props) {
               <div className="mb-5">
                 <div className="flex justify-between items-center mb-1">
                   <span className="font-bold text-gray-900 text-xl">{formatINR(campaign.raisedAmount)}</span>
-                  <span className={`text-xs font-bold px-2.5 py-1 rounded-full ${percentage >= 100 ? "bg-green-100 text-green-700" : "bg-blue-100 text-blue-700"}`}>
+                  <span className={`text-xs font-bold px-2.5 py-1 rounded-full ${percentage >= 100 ? "bg-blue-100 text-blue-700" : "bg-blue-100 text-blue-700"}`}>
                     {percentage}% funded
                   </span>
                 </div>

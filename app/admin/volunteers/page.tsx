@@ -3,7 +3,7 @@ import { prisma } from "@/lib/prisma";
 const STATUS_STYLES: Record<string, string> = {
   PENDING:  "bg-amber-100 text-amber-700",
   APPROVED: "bg-blue-100 text-blue-700",
-  ACTIVE:   "bg-green-100 text-green-700",
+  ACTIVE:   "bg-blue-100 text-blue-700",
   INACTIVE: "bg-gray-100 text-gray-500",
 };
 

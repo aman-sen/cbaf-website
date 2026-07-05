@@ -23,7 +23,7 @@ const placeholderImages = [
 ];
 
 const COLORS = [
-  "from-green-100 to-green-200",
+  "from-blue-100 to-blue-200",
   "from-blue-100 to-blue-200",
   "from-purple-100 to-purple-200",
   "from-amber-100 to-amber-200",
@@ -34,7 +34,7 @@ const COLORS = [
 export default function GalleryPage() {
   return (
     <div>
-      <div className="bg-gradient-to-br from-slate-900 to-green-950 py-16 px-4 text-center">
+      <div className="bg-gradient-to-br from-slate-900 to-blue-950 py-16 px-4 text-center">
         <h1 className="font-display text-4xl font-bold text-white mb-3">Photo Gallery</h1>
         <p className="text-gray-300 max-w-xl mx-auto">Glimpses of our work across communities in India.</p>
       </div>
@@ -43,7 +43,7 @@ export default function GalleryPage() {
         {/* Category Filter */}
         <div className="flex flex-wrap gap-2 mb-8">
           {categories.map((cat) => (
-            <button key={cat} className={`px-4 py-1.5 rounded-full text-sm font-medium transition-colors ${cat === "All" ? "bg-green-600 text-white" : "bg-gray-100 text-gray-600 hover:bg-gray-200"}`}>
+            <button key={cat} className={`px-4 py-1.5 rounded-full text-sm font-medium transition-colors ${cat === "All" ? "bg-blue-600 text-white" : "bg-gray-100 text-gray-600 hover:bg-gray-200"}`}>
               {cat}
             </button>
           ))}

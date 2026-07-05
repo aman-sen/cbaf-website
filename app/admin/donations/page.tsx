@@ -13,7 +13,7 @@ export default async function AdminDonationsPage() {
     new Intl.NumberFormat("en-IN", { style: "currency", currency: "INR", maximumFractionDigits: 0 }).format(n);
 
   const STATUS_STYLES: Record<string, string> = {
-    SUCCESS: "bg-green-100 text-green-700",
+    SUCCESS: "bg-blue-100 text-blue-700",
     PENDING: "bg-amber-100 text-amber-700",
     FAILED:  "bg-red-100 text-red-700",
     REFUNDED:"bg-gray-100 text-gray-600",
@@ -24,15 +24,15 @@ export default async function AdminDonationsPage() {
       <div className="flex items-center justify-between">
         <div>
           <h1 className="font-display text-2xl font-bold text-gray-900">Donations</h1>
-          <p className="text-gray-400 text-sm">Total raised: <span className="text-green-600 font-bold">{formatINR(totalRaised)}</span></p>
+          <p className="text-gray-400 text-sm">Total raised: <span className="text-blue-600 font-bold">{formatINR(totalRaised)}</span></p>
         </div>
       </div>
 
       {/* Summary cards */}
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
         {[
-          { label: "Total Raised",  value: formatINR(totalRaised), color: "text-green-600" },
-          { label: "Successful",    value: String(donations.filter(d => d.status === "SUCCESS").length), color: "text-green-600" },
+          { label: "Total Raised",  value: formatINR(totalRaised), color: "text-blue-600" },
+          { label: "Successful",    value: String(donations.filter(d => d.status === "SUCCESS").length), color: "text-blue-600" },
           { label: "Pending",       value: String(donations.filter(d => d.status === "PENDING").length), color: "text-amber-600" },
           { label: "Failed",        value: String(donations.filter(d => d.status === "FAILED").length),  color: "text-red-500" },
         ].map((s) => (
@@ -59,7 +59,7 @@ export default async function AdminDonationsPage() {
                   <td className="px-4 py-3 text-sm font-medium text-gray-800">{d.isAnonymous ? "Anonymous" : d.donorName}</td>
                   <td className="px-4 py-3 text-xs text-gray-500">{d.donorEmail}</td>
                   <td className="px-4 py-3 text-xs text-gray-500 max-w-xs truncate">{d.campaign.title}</td>
-                  <td className="px-4 py-3 text-sm font-bold text-green-600">{formatINR(d.amount)}</td>
+                  <td className="px-4 py-3 text-sm font-bold text-blue-600">{formatINR(d.amount)}</td>
                   <td className="px-4 py-3 text-xs text-gray-500">{d.paymentMethod}</td>
                   <td className="px-4 py-3">
                     <span className={`text-xs font-semibold px-2 py-1 rounded-full ${STATUS_STYLES[d.status] || "bg-gray-100"}`}>

@@ -31,7 +31,7 @@ export function AdminDonationsChart() {
             formatter={(v: any) => [formatINR(v), "Donations"]}
             contentStyle={{ borderRadius: 12, border: "1px solid #e5e7eb", fontSize: 12 }}
           />
-          <Bar dataKey="donations" fill="#16a34a" radius={[6, 6, 0, 0]} />
+          <Bar dataKey="donations" fill="#2563eb" radius={[6, 6, 0, 0]} />
         </BarChart>
       </ResponsiveContainer>
     </div>

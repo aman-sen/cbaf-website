@@ -87,7 +87,7 @@ export function Navbar() {
                           <Link
                             key={child.label}
                             href={child.href}
-                            className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-green-50 hover:text-green-700 transition-colors"
+                            className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-700 transition-colors"
                           >
                             {child.label}
                           </Link>
@@ -102,7 +102,7 @@ export function Navbar() {
                   href={link.href}
                   className={`px-3 py-2 text-sm font-medium rounded-lg transition-colors ${
                     pathname === link.href
-                      ? "text-green-700 bg-green-50"
+                      ? "text-blue-700 bg-blue-50"
                       : "text-gray-600 hover:text-gray-900 hover:bg-gray-50"
                   }`}
                 >
@@ -116,7 +116,7 @@ export function Navbar() {
           <div className="hidden lg:flex items-center gap-2">
             <Link
               href="/donate"
-              className="flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white text-sm font-semibold px-4 py-2 rounded-full transition-colors"
+              className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold px-4 py-2 rounded-full transition-colors"
             >
               <Heart className="w-3.5 h-3.5" />
               Donate Now
@@ -158,7 +158,7 @@ export function Navbar() {
                     <Link
                       key={child.label}
                       href={child.href}
-                      className="block px-6 py-2 text-sm text-gray-500 hover:text-green-700"
+                      className="block px-6 py-2 text-sm text-gray-500 hover:text-blue-700"
                       onClick={() => setMobileOpen(false)}
                     >
                       {child.label}
@@ -169,7 +169,7 @@ export function Navbar() {
               <div className="pt-2">
                 <Link
                   href="/donate"
-                  className="flex items-center justify-center gap-2 bg-green-600 text-white font-semibold py-2.5 rounded-full text-sm w-full"
+                  className="flex items-center justify-center gap-2 bg-blue-600 text-white font-semibold py-2.5 rounded-full text-sm w-full"
                   onClick={() => setMobileOpen(false)}
                 >
                   <Heart className="w-4 h-4" /> Donate Now

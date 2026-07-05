@@ -34,13 +34,13 @@ export async function sendDonationReceipt(donation: {
 <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"></head>
 <body style="font-family:Arial,sans-serif;background:#f9fafb;margin:0;padding:24px;">
   <div style="max-width:600px;margin:0 auto;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,0.08);">
-    <div style="background:linear-gradient(135deg,#16a34a,#2563eb);padding:32px;text-align:center;">
+    <div style="background:linear-gradient(135deg,#2563eb,#2563eb);padding:32px;text-align:center;">
       <h1 style="color:white;margin:0;font-size:24px;">Thank You, ${donation.donorName}!</h1>
       <p style="color:rgba(255,255,255,0.85);margin:8px 0 0;">Your generosity creates real change.</p>
     </div>
     <div style="padding:32px;">
       <p style="color:#374151;line-height:1.7;">Your donation has been received and will directly support <strong>${donation.campaignTitle}</strong>.</p>
-      <div style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:12px;padding:20px;margin:20px 0;">
+      <div style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:12px;padding:20px;margin:20px 0;">
         <table style="width:100%;border-collapse:collapse;">
           <tr><td style="color:#6b7280;padding:6px 0;font-size:14px;">Amount</td><td style="font-weight:700;color:#111827;text-align:right;">${formatted}</td></tr>
           <tr><td style="color:#6b7280;padding:6px 0;font-size:14px;">Campaign</td><td style="color:#111827;text-align:right;font-size:14px;">${donation.campaignTitle}</td></tr>

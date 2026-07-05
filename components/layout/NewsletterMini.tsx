@@ -24,7 +24,7 @@ export function NewsletterMini() {
 
   if (done) {
     return (
-      <p className="text-green-400 text-xs font-medium">
+      <p className="text-blue-400 text-xs font-medium">
         ✓ Subscribed! Thank you.
       </p>
     );
@@ -38,12 +38,12 @@ export function NewsletterMini() {
         onChange={(e) => setEmail(e.target.value)}
         placeholder="Your email"
         required
-        className="flex-1 bg-gray-700 text-white text-xs px-3 py-2 rounded-lg placeholder:text-gray-500 border border-gray-600 focus:outline-none focus:border-green-500"
+        className="flex-1 bg-gray-700 text-white text-xs px-3 py-2 rounded-lg placeholder:text-gray-500 border border-gray-600 focus:outline-none focus:border-blue-500"
       />
       <button
         type="submit"
         disabled={loading}
-        className="bg-green-600 hover:bg-green-700 disabled:opacity-60 text-white text-xs font-semibold px-3 py-2 rounded-lg transition-colors"
+        className="bg-blue-600 hover:bg-blue-700 disabled:opacity-60 text-white text-xs font-semibold px-3 py-2 rounded-lg transition-colors"
       >
         {loading ? "…" : "Join"}
       </button>

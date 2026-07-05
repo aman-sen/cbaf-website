@@ -41,8 +41,8 @@ export default async function ImpactPage() {
 
   return (
     <div>
-      <div className="bg-gradient-to-br from-slate-900 to-green-950 py-16 px-4 text-center">
-        <span className="inline-block bg-green-500/20 text-green-400 text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-md mb-4 border border-green-500/30">
+      <div className="bg-gradient-to-br from-slate-900 to-blue-950 py-16 px-4 text-center">
+        <span className="inline-block bg-blue-500/20 text-blue-400 text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-md mb-4 border border-blue-500/30">
           Impact Dashboard
         </span>
         <h1 className="font-display text-4xl font-bold text-white mb-3">
@@ -59,7 +59,7 @@ export default async function ImpactPage() {
         <section className="py-12 bg-white">
           <div className="max-w-5xl mx-auto px-4 sm:px-6">
             <h2 className="font-display text-2xl font-bold text-gray-900 mb-6 flex items-center gap-2">
-              <BarChart3 className="w-6 h-6 text-green-600" /> Top Performing Campaigns
+              <BarChart3 className="w-6 h-6 text-blue-600" /> Top Performing Campaigns
             </h2>
             <div className="space-y-3">
               {topCampaigns.map((c, i) => {
@@ -74,7 +74,7 @@ export default async function ImpactPage() {
                         {c.title}
                       </div>
                       <div className="h-2 bg-gray-200 rounded-full overflow-hidden">
-                        <div className="h-full bg-green-500 rounded-full" style={{ width: `${Math.min(pct, 100)}%` }} />
+                        <div className="h-full bg-blue-500 rounded-full" style={{ width: `${Math.min(pct, 100)}%` }} />
                       </div>
                     </div>
                     <div className="text-right flex-shrink-0">
@@ -116,7 +116,7 @@ export default async function ImpactPage() {
                         <td className="px-5 py-3 text-sm text-gray-500 max-w-xs truncate">
                           {d.campaign.title}
                         </td>
-                        <td className="px-5 py-3 text-sm font-bold text-green-600">
+                        <td className="px-5 py-3 text-sm font-bold text-blue-600">
                           {formatINR(d.amount)}
                         </td>
                         <td className="px-5 py-3 text-xs text-gray-400">

@@ -41,7 +41,7 @@ export default async function AdminSubscribersPage() {
                   <td className="px-4 py-3 text-sm text-gray-600">{s.name || "—"}</td>
                   <td className="px-4 py-3 text-xs text-gray-400">{s.source || "direct"}</td>
                   <td className="px-4 py-3">
-                    <span className={`text-xs font-semibold px-2 py-1 rounded-full ${s.status === "ACTIVE" ? "bg-green-100 text-green-700" : "bg-gray-100 text-gray-500"}`}>
+                    <span className={`text-xs font-semibold px-2 py-1 rounded-full ${s.status === "ACTIVE" ? "bg-blue-100 text-blue-700" : "bg-gray-100 text-gray-500"}`}>
                       {s.status}
                     </span>
                   </td>

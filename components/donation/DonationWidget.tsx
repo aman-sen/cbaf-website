@@ -75,7 +75,7 @@ export function DonationWidget({ campaignId, campaignTitle }: Props) {
         },
         prefill: { name: donorName, email: donorEmail, contact: donorPhone },
         notes: { campaignId, campaignTitle },
-        theme: { color: "#16a34a" },
+        theme: { color: "#2563eb" },
         modal: {
           ondismiss: () => setLoading(false),
         },
@@ -119,8 +119,8 @@ export function DonationWidget({ campaignId, campaignTitle }: Props) {
             onClick={() => { setAmount(a); setCustom(""); }}
             className={`py-2 rounded-xl text-sm font-bold border transition-all ${
               amount === a && !custom
-                ? "bg-green-600 text-white border-green-600"
-                : "border-gray-200 text-gray-700 hover:border-green-400 hover:text-green-700"
+                ? "bg-blue-600 text-white border-blue-600"
+                : "border-gray-200 text-gray-700 hover:border-blue-400 hover:text-blue-700"
             }`}
           >
             ₹{a.toLocaleString("en-IN")}
@@ -137,13 +137,13 @@ export function DonationWidget({ campaignId, campaignTitle }: Props) {
           placeholder="Custom amount"
           value={custom}
           onChange={(e) => { setCustom(e.target.value); }}
-          className="w-full border border-gray-200 focus:border-green-500 rounded-xl pl-8 pr-4 py-2.5 text-sm focus:outline-none focus:ring-1 focus:ring-green-500"
+          className="w-full border border-gray-200 focus:border-blue-500 rounded-xl pl-8 pr-4 py-2.5 text-sm focus:outline-none focus:ring-1 focus:ring-blue-500"
         />
       </div>
 
       {/* Impact */}
       {impact && !custom && (
-        <div className="bg-green-50 border border-green-100 rounded-xl p-3 text-sm text-green-800">
+        <div className="bg-blue-50 border border-blue-100 rounded-xl p-3 text-sm text-blue-800">
           {impact}
         </div>
       )}
@@ -155,28 +155,28 @@ export function DonationWidget({ campaignId, campaignTitle }: Props) {
           placeholder="Your full name *"
           value={donorName}
           onChange={(e) => setDonorName(e.target.value)}
-          className="w-full border border-gray-200 focus:border-green-500 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-1 focus:ring-green-500"
+          className="w-full border border-gray-200 focus:border-blue-500 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-1 focus:ring-blue-500"
         />
         <input
           type="email"
           placeholder="Your email address *"
           value={donorEmail}
           onChange={(e) => setDonorEmail(e.target.value)}
-          className="w-full border border-gray-200 focus:border-green-500 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-1 focus:ring-green-500"
+          className="w-full border border-gray-200 focus:border-blue-500 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-1 focus:ring-blue-500"
         />
         <input
           type="tel"
           placeholder="Mobile number (optional)"
           value={donorPhone}
           onChange={(e) => setDonorPhone(e.target.value)}
-          className="w-full border border-gray-200 focus:border-green-500 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-1 focus:ring-green-500"
+          className="w-full border border-gray-200 focus:border-blue-500 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-1 focus:ring-blue-500"
         />
         <textarea
           placeholder="Leave a message (optional)"
           value={message}
           onChange={(e) => setMessage(e.target.value)}
           rows={2}
-          className="w-full border border-gray-200 focus:border-green-500 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-1 focus:ring-green-500 resize-none"
+          className="w-full border border-gray-200 focus:border-blue-500 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-1 focus:ring-blue-500 resize-none"
         />
       </div>
 
@@ -186,7 +186,7 @@ export function DonationWidget({ campaignId, campaignTitle }: Props) {
       <button
         onClick={handleDonate}
         disabled={loading || finalAmount < 1}
-        className="w-full bg-green-600 hover:bg-green-700 disabled:opacity-50 disabled:cursor-not-allowed text-white font-bold py-3.5 rounded-xl transition-colors text-sm"
+        className="w-full bg-blue-600 hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed text-white font-bold py-3.5 rounded-xl transition-colors text-sm"
       >
         {loading
           ? "Processing..."

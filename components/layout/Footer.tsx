@@ -56,7 +56,7 @@ function NewsletterMini() {
 
   if (subscribed) {
     return (
-      <div className="flex items-center gap-2 text-green-400 text-xs">
+      <div className="flex items-center gap-2 text-blue-400 text-xs">
         <CheckCircle className="w-4 h-4" />
         Subscribed! Thank you.
       </div>
@@ -70,11 +70,11 @@ function NewsletterMini() {
         value={email}
         onChange={(e) => setEmail(e.target.value)}
         placeholder="Your email"
-        className="flex-1 bg-gray-700 text-white text-xs px-3 py-2 rounded-lg placeholder:text-gray-500 border border-gray-600 focus:outline-none focus:border-green-500"
+        className="flex-1 bg-gray-700 text-white text-xs px-3 py-2 rounded-lg placeholder:text-gray-500 border border-gray-600 focus:outline-none focus:border-blue-500"
       />
       <button
         type="submit" disabled={loading}
-        className="bg-green-600 hover:bg-green-700 disabled:opacity-60 text-white text-xs font-semibold px-3 py-2 rounded-lg transition-colors"
+        className="bg-blue-600 hover:bg-blue-700 disabled:opacity-60 text-white text-xs font-semibold px-3 py-2 rounded-lg transition-colors"
       >
         {loading ? "..." : "Join"}
       </button>
@@ -91,7 +91,7 @@ export function Footer() {
           {/* Brand */}
           <div>
             {/* <div className="flex items-center gap-3 mb-4">
-              <div className="w-9 h-9 bg-gradient-to-br from-green-600 to-blue-600 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-9 h-9 bg-gradient-to-br from-blue-600 to-blue-800 rounded-lg flex items-center justify-center flex-shrink-0">
                 <span className="text-white font-bold font-display text-lg">C</span>
               </div>
               <div>
@@ -119,11 +119,11 @@ export function Footer() {
             </p>
             <div className="space-y-2 text-sm">
               <div className="flex items-center gap-2">
-                <Phone className="w-3.5 h-3.5 text-green-500 flex-shrink-0" />
+                <Phone className="w-3.5 h-3.5 text-blue-500 flex-shrink-0" />
                 <a href="tel:+918529716474" className="hover:text-white transition-colors">+91 85297 16474</a>
               </div>
               <div className="flex items-center gap-2">
-                <Mail className="w-3.5 h-3.5 text-green-500 flex-shrink-0" />
+                <Mail className="w-3.5 h-3.5 text-blue-500 flex-shrink-0" />
                 <a href="mailto:info@communityfoundation.in" className="hover:text-white transition-colors text-xs">
                   info@communityfoundation.in
                 </a>
@@ -132,7 +132,7 @@ export function Footer() {
             <div className="flex gap-3 mt-5">
               {[Facebook, Twitter, Instagram, Linkedin, Youtube].map((Icon, i) => (
                 <a key={i} href="#"
-                  className="w-8 h-8 bg-gray-800 hover:bg-green-600 rounded-lg flex items-center justify-center transition-colors">
+                  className="w-8 h-8 bg-gray-800 hover:bg-blue-600 rounded-lg flex items-center justify-center transition-colors">
                   <Icon className="w-3.5 h-3.5" />
                 </a>
               ))}

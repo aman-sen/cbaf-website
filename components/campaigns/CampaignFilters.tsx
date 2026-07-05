@@ -47,12 +47,12 @@ export function CampaignFilters({ onSearch, onCategory, onSort, onFilter }: Prop
             type="text"
             placeholder="Search campaigns..."
             onChange={(e) => onSearch(e.target.value)}
-            className="w-full pl-10 pr-4 py-2.5 border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500"
+            className="w-full pl-10 pr-4 py-2.5 border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
           />
         </div>
         <select
           onChange={(e) => onCategory(e.target.value)}
-          className="px-4 py-2.5 border border-gray-200 rounded-xl text-sm text-gray-700 focus:outline-none focus:border-green-500 bg-white"
+          className="px-4 py-2.5 border border-gray-200 rounded-xl text-sm text-gray-700 focus:outline-none focus:border-blue-500 bg-white"
         >
           {CATEGORIES.map((c) => (
             <option key={c.value} value={c.value}>{c.label}</option>
@@ -60,7 +60,7 @@ export function CampaignFilters({ onSearch, onCategory, onSort, onFilter }: Prop
         </select>
         <select
           onChange={(e) => onSort(e.target.value)}
-          className="px-4 py-2.5 border border-gray-200 rounded-xl text-sm text-gray-700 focus:outline-none focus:border-green-500 bg-white"
+          className="px-4 py-2.5 border border-gray-200 rounded-xl text-sm text-gray-700 focus:outline-none focus:border-blue-500 bg-white"
         >
           {SORT_OPTIONS.map((s) => (
             <option key={s.value} value={s.value}>{s.label}</option>
@@ -76,7 +76,7 @@ export function CampaignFilters({ onSearch, onCategory, onSort, onFilter }: Prop
             onClick={() => { setActiveFilter(f.key); onFilter(f.key); }}
             className={`px-4 py-1.5 rounded-full text-sm font-medium transition-colors ${
               activeFilter === f.key
-                ? "bg-green-600 text-white"
+                ? "bg-blue-600 text-white"
                 : "bg-gray-100 text-gray-600 hover:bg-gray-200"
             }`}
           >

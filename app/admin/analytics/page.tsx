@@ -70,7 +70,7 @@ export default async function AdminAnalyticsPage() {
                   <span className="text-gray-500">{formatINR(raised)} ({pct}%)</span>
                 </div>
                 <div className="h-2 bg-gray-100 rounded-full overflow-hidden">
-                  <div className="h-full bg-green-500 rounded-full" style={{ width: `${pct}%` }} />
+                  <div className="h-full bg-blue-500 rounded-full" style={{ width: `${pct}%` }} />
                 </div>
               </div>
             );

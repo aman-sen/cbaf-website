@@ -63,7 +63,7 @@ export default async function AdminDashboardPage() {
         {/* Top Campaigns */}
         <div className="bg-white rounded-2xl border border-gray-100 p-5">
           <h3 className="font-semibold text-gray-800 mb-4 flex items-center gap-2">
-            <TrendingUp className="w-4 h-4 text-green-600" /> Top Campaigns
+            <TrendingUp className="w-4 h-4 text-blue-600" /> Top Campaigns
           </h3>
           <div className="space-y-3">
             {topCampaigns.map((c) => {
@@ -75,7 +75,7 @@ export default async function AdminDashboardPage() {
                     <span className="text-gray-400 flex-shrink-0">{pct}%</span>
                   </div>
                   <div className="h-1.5 bg-gray-100 rounded-full overflow-hidden">
-                    <div className="h-full bg-green-500 rounded-full" style={{ width: `${Math.min(pct, 100)}%` }} />
+                    <div className="h-full bg-blue-500 rounded-full" style={{ width: `${Math.min(pct, 100)}%` }} />
                   </div>
                   <div className="text-xs text-gray-400 mt-0.5">{formatINR(c.raisedAmount)} · {c.donorCount} donors</div>
                 </div>
@@ -89,7 +89,7 @@ export default async function AdminDashboardPage() {
       <div className="bg-white rounded-2xl border border-gray-100 overflow-hidden">
         <div className="px-5 py-4 border-b border-gray-100 flex items-center justify-between">
           <h3 className="font-semibold text-gray-800">Recent Donations</h3>
-          <a href="/admin/donations" className="text-xs text-green-600 font-medium hover:underline">View all</a>
+          <a href="/admin/donations" className="text-xs text-blue-600 font-medium hover:underline">View all</a>
         </div>
         <div className="overflow-x-auto">
           <table className="w-full">
@@ -105,9 +105,9 @@ export default async function AdminDashboardPage() {
                 <tr key={d.id} className="hover:bg-gray-50">
                   <td className="px-4 py-3 text-sm font-medium text-gray-800">{d.isAnonymous ? "Anonymous" : d.donorName}</td>
                   <td className="px-4 py-3 text-sm text-gray-500 max-w-xs truncate">{d.campaign.title}</td>
-                  <td className="px-4 py-3 text-sm font-bold text-green-600">{formatINR(d.amount)}</td>
+                  <td className="px-4 py-3 text-sm font-bold text-blue-600">{formatINR(d.amount)}</td>
                   <td className="px-4 py-3">
-                    <span className={`text-xs font-semibold px-2 py-1 rounded-full ${d.status === "SUCCESS" ? "bg-green-100 text-green-700" : "bg-gray-100 text-gray-600"}`}>
+                    <span className={`text-xs font-semibold px-2 py-1 rounded-full ${d.status === "SUCCESS" ? "bg-blue-100 text-blue-700" : "bg-gray-100 text-gray-600"}`}>
                       {d.status}
                     </span>
                   </td>

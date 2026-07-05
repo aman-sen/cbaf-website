@@ -13,7 +13,7 @@ export default async function AdminProjectsPage() {
           <p className="text-gray-400 text-sm">{projects.length} total projects</p>
         </div>
         <Link href="/admin/projects/new"
-          className="flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white font-semibold px-4 py-2 rounded-xl text-sm transition-colors">
+          className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold px-4 py-2 rounded-xl text-sm transition-colors">
           <Plus className="w-4 h-4" /> New Project
         </Link>
       </div>
@@ -25,7 +25,7 @@ export default async function AdminProjectsPage() {
             <div key={p.id} className="bg-white rounded-2xl border border-gray-100 p-5">
               <div className="flex items-start justify-between mb-3">
                 <span className="text-xs font-semibold text-blue-600 uppercase tracking-wider">{p.category}</span>
-                <span className={`text-xs font-bold px-2 py-0.5 rounded-full ${p.status === "ONGOING" ? "bg-green-100 text-green-700" : "bg-gray-100 text-gray-600"}`}>
+                <span className={`text-xs font-bold px-2 py-0.5 rounded-full ${p.status === "ONGOING" ? "bg-blue-100 text-blue-700" : "bg-gray-100 text-gray-600"}`}>
                   {p.status}
                 </span>
               </div>
@@ -39,12 +39,12 @@ export default async function AdminProjectsPage() {
                     <span>Budget used</span><span>{progress}%</span>
                   </div>
                   <div className="h-1.5 bg-gray-100 rounded-full overflow-hidden">
-                    <div className="h-full bg-green-500 rounded-full" style={{ width: `${Math.min(progress, 100)}%` }} />
+                    <div className="h-full bg-blue-500 rounded-full" style={{ width: `${Math.min(progress, 100)}%` }} />
                   </div>
                 </div>
               )}
               <Link href={`/projects/${p.slug}`} target="_blank"
-                className="block text-center text-xs text-green-600 font-medium mt-3 hover:underline">
+                className="block text-center text-xs text-blue-600 font-medium mt-3 hover:underline">
                 View Project →
               </Link>
             </div>

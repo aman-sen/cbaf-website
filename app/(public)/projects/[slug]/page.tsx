@@ -33,14 +33,14 @@ export default async function ProjectDetailPage({ params }: Props) {
     <div className="bg-gray-50 min-h-screen">
       <div className="bg-white border-b border-gray-100 py-3 px-4">
         <div className="max-w-5xl mx-auto text-sm text-gray-500">
-          <Link href="/" className="hover:text-green-600">Home</Link>{" / "}
-          <Link href="/projects" className="hover:text-green-600">Projects</Link>{" / "}
+          <Link href="/" className="hover:text-blue-600">Home</Link>{" / "}
+          <Link href="/projects" className="hover:text-blue-600">Projects</Link>{" / "}
           <span className="text-gray-800">{project.title}</span>
         </div>
       </div>
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 py-8">
-        <div className="relative h-64 sm:h-80 rounded-2xl overflow-hidden bg-gradient-to-br from-green-50 to-blue-50 mb-6">
+        <div className="relative h-64 sm:h-80 rounded-2xl overflow-hidden bg-gradient-to-br from-blue-50 to-blue-100 mb-6">
           {project.coverImage && (
             <Image
               src={project.coverImage}
@@ -66,7 +66,7 @@ export default async function ProjectDetailPage({ params }: Props) {
               <div className="flex flex-wrap gap-4 mt-5 pt-5 border-t border-gray-100 text-sm text-gray-500">
                 {project.location && (
                   <span className="flex items-center gap-1.5">
-                    <MapPin className="w-4 h-4 text-green-500" />
+                    <MapPin className="w-4 h-4 text-blue-500" />
                     {project.location}
                   </span>
                 )}
@@ -92,15 +92,15 @@ export default async function ProjectDetailPage({ params }: Props) {
             {metrics && (
               <div className="bg-white rounded-2xl p-6 border border-gray-100">
                 <h2 className="font-display text-xl font-bold text-gray-900 mb-5 flex items-center gap-2">
-                  <TrendingUp className="w-5 h-5 text-green-600" /> Impact Metrics
+                  <TrendingUp className="w-5 h-5 text-blue-600" /> Impact Metrics
                 </h2>
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
                   {Object.entries(metrics).map(([key, val]) => (
                     <div
                       key={key}
-                      className="bg-gradient-to-br from-green-50 to-green-100 rounded-xl p-4 text-center border border-green-100"
+                      className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-4 text-center border border-blue-100"
                     >
-                      <div className="font-display text-2xl font-bold text-green-700">
+                      <div className="font-display text-2xl font-bold text-blue-700">
                         {String(val)}
                       </div>
                       <div className="text-xs text-gray-500 mt-1 capitalize">
@@ -119,7 +119,7 @@ export default async function ProjectDetailPage({ params }: Props) {
               <div className="space-y-3 text-sm">
                 <div className="flex justify-between">
                   <span className="text-gray-500">Status</span>
-                  <span className="font-medium text-green-700">{project.status}</span>
+                  <span className="font-medium text-blue-700">{project.status}</span>
                 </div>
                 {project.budget && (
                   <>
@@ -138,7 +138,7 @@ export default async function ProjectDetailPage({ params }: Props) {
                       </div>
                       <div className="h-2 bg-gray-100 rounded-full overflow-hidden">
                         <div
-                          className="h-full bg-green-500 rounded-full"
+                          className="h-full bg-blue-500 rounded-full"
                           style={{ width: `${Math.min(progress, 100)}%` }}
                         />
                       </div>
@@ -149,7 +149,7 @@ export default async function ProjectDetailPage({ params }: Props) {
             </div>
             <Link
               href="/donate"
-              className="block bg-green-600 hover:bg-green-700 text-white font-bold py-3 rounded-xl text-center text-sm transition-colors"
+              className="block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-xl text-center text-sm transition-colors"
             >
               ❤ Support This Project
             </Link>

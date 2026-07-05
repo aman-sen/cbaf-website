@@ -30,7 +30,7 @@ export default async function DonatePage() {
 
   return (
     <div className="bg-gray-50 min-h-screen">
-      <div className="bg-gradient-to-br from-green-700 via-green-800 to-blue-900 py-16 px-4">
+      <div className="bg-gradient-to-br from-blue-700 via-blue-800 to-blue-900 py-16 px-4">
         <div className="max-w-2xl mx-auto text-center">
           <div className="inline-flex items-center justify-center w-14 h-14 bg-white/20 rounded-2xl mb-5">
             <Heart className="w-7 h-7 text-white" />
@@ -61,7 +61,7 @@ export default async function DonatePage() {
                           name="campaign"
                           value={c.id}
                           defaultChecked={c.id === generalCampaign?.id}
-                          className="accent-green-600"
+                          className="accent-blue-600"
                         />
                         <div className="flex-1 min-w-0">
                           <div className="font-medium text-gray-800 text-sm truncate">{c.title}</div>
@@ -98,12 +98,12 @@ export default async function DonatePage() {
                 ].map((item) => (
                   <div
                     key={item.amount}
-                    className="flex gap-3 p-3 bg-green-50 rounded-xl border border-green-100"
+                    className="flex gap-3 p-3 bg-blue-50 rounded-xl border border-blue-100"
                   >
-                    <span className="text-green-700 font-bold text-sm whitespace-nowrap">
+                    <span className="text-blue-700 font-bold text-sm whitespace-nowrap">
                       ₹{item.amount.toLocaleString("en-IN")}
                     </span>
-                    <span className="text-green-800 text-sm">{item.impact}</span>
+                    <span className="text-blue-800 text-sm">{item.impact}</span>
                   </div>
                 ))}
               </div>
@@ -113,7 +113,7 @@ export default async function DonatePage() {
               <h3 className="font-display font-bold text-gray-900 mb-4">Why Donate with Us</h3>
               <div className="space-y-3">
                 {[
-                  { icon: Shield, text: "100% secure payments via Razorpay",  color: "text-green-600" },
+                  { icon: Shield, text: "100% secure payments via Razorpay",  color: "text-blue-600" },
                   { icon: Award,  text: "80G tax exemption certificate",        color: "text-blue-600"  },
                   { icon: Zap,    text: "Direct impact — no middlemen",         color: "text-amber-600" },
                   { icon: Heart,  text: "Instant receipt sent to your email",   color: "text-red-500"   },

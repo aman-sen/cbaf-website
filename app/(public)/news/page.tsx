@@ -16,7 +16,7 @@ const newsItems = [
 
 const TAG_COLORS: Record<string, string> = {
   Milestone:    "bg-purple-100 text-purple-700",
-  Environment:  "bg-green-100 text-green-700",
+  Environment:  "bg-blue-100 text-blue-700",
   Relief:       "bg-red-100 text-red-700",
   Empowerment:  "bg-pink-100 text-pink-700",
   Education:    "bg-blue-100 text-blue-700",
@@ -43,7 +43,7 @@ export default function NewsPage() {
               </div>
               <h2 className="font-display text-xl font-bold text-gray-900 mb-2">{item.title}</h2>
               <p className="text-gray-600 text-sm leading-relaxed">{item.excerpt}</p>
-              <button className="mt-3 text-green-600 font-semibold text-sm hover:underline">Read More →</button>
+              <button className="mt-3 text-blue-600 font-semibold text-sm hover:underline">Read More →</button>
             </article>
           ))}
         </div>

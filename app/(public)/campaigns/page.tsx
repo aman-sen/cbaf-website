@@ -44,8 +44,8 @@ export default function CampaignsPage() {
 
   return (
     <div>
-      <div className="bg-gradient-to-br from-slate-900 to-green-950 py-14 px-4 text-center">
-        <span className="inline-block bg-green-500/20 text-green-400 text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-md mb-4 border border-green-500/30">
+      <div className="bg-gradient-to-br from-slate-900 to-blue-950 py-14 px-4 text-center">
+        <span className="inline-block bg-blue-500/20 text-blue-400 text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-md mb-4 border border-blue-500/30">
           All Campaigns
         </span>
         <h1 className="font-display text-4xl font-bold text-white mb-3">
@@ -66,7 +66,7 @@ export default function CampaignsPage() {
 
         {loading ? (
           <div className="flex justify-center py-20">
-            <Loader2 className="w-8 h-8 text-green-600 animate-spin" />
+            <Loader2 className="w-8 h-8 text-blue-600 animate-spin" />
           </div>
         ) : error ? (
           <div className="text-center py-20">
@@ -102,7 +102,7 @@ export default function CampaignsPage() {
                     onClick={() => setPage(p)}
                     className={`w-10 h-10 rounded-xl text-sm font-medium ${
                       p === page
-                        ? "bg-green-600 text-white"
+                        ? "bg-blue-600 text-white"
                         : "border border-gray-200 hover:bg-gray-50"
                     }`}
                   >

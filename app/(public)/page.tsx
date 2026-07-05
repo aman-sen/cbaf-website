@@ -40,7 +40,7 @@ export default async function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="flex items-end justify-between mb-10">
             <div>
-              <span className="inline-block bg-green-100 text-green-700 text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-md mb-3">
+              <span className="inline-block bg-blue-100 text-blue-700 text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-md mb-3">
                 Active Campaigns
               </span>
               <h2 className="font-display text-3xl sm:text-4xl font-bold text-gray-900">Fund a Cause Today</h2>

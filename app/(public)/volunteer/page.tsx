@@ -40,9 +40,9 @@ export default function VolunteerPage() {
   return (
     <div>
       {/* Hero */}
-      <div className="bg-gradient-to-br from-slate-900 to-green-950 py-16 px-4">
+      <div className="bg-gradient-to-br from-slate-900 to-blue-950 py-16 px-4">
         <div className="max-w-3xl mx-auto text-center">
-          <span className="inline-block bg-green-500/20 text-green-400 text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-md mb-4 border border-green-500/30">
+          <span className="inline-block bg-blue-500/20 text-blue-400 text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-md mb-4 border border-blue-500/30">
             Volunteer
           </span>
           <h1 className="font-display text-4xl sm:text-5xl font-bold text-white mb-4">
@@ -54,7 +54,7 @@ export default function VolunteerPage() {
           <div className="grid grid-cols-3 gap-4 mt-8 max-w-sm mx-auto">
             {stats.map(({ icon: Icon, value, label }) => (
               <div key={label} className="text-center">
-                <Icon className="w-5 h-5 text-green-400 mx-auto mb-1" />
+                <Icon className="w-5 h-5 text-blue-400 mx-auto mb-1" />
                 <div className="font-display text-xl font-bold text-white">{value}</div>
                 <div className="text-xs text-gray-400">{label}</div>
               </div>
@@ -66,10 +66,10 @@ export default function VolunteerPage() {
       <div className="max-w-2xl mx-auto px-4 sm:px-6 py-12">
         {submitted ? (
           <motion.div initial={{ scale: 0.9, opacity: 0 }} animate={{ scale: 1, opacity: 1 }}
-            className="text-center bg-green-50 border border-green-200 rounded-3xl p-12">
-            <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-5" />
-            <h2 className="font-display text-2xl font-bold text-green-900 mb-3">Application Submitted!</h2>
-            <p className="text-green-700">Thank you for signing up! Our team will review your application and reach out within 3–5 working days.</p>
+            className="text-center bg-blue-50 border border-blue-200 rounded-3xl p-12">
+            <CheckCircle className="w-16 h-16 text-blue-500 mx-auto mb-5" />
+            <h2 className="font-display text-2xl font-bold text-blue-900 mb-3">Application Submitted!</h2>
+            <p className="text-blue-700">Thank you for signing up! Our team will review your application and reach out within 3–5 working days.</p>
           </motion.div>
         ) : (
           <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }}>
@@ -81,13 +81,13 @@ export default function VolunteerPage() {
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-1.5">Full Name *</label>
                     <input {...register("name")} placeholder="Your full name"
-                      className="w-full border border-gray-200 focus:border-green-500 focus:ring-1 focus:ring-green-500 rounded-xl px-4 py-2.5 text-sm outline-none transition-colors" />
+                      className="w-full border border-gray-200 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 rounded-xl px-4 py-2.5 text-sm outline-none transition-colors" />
                     {errors.name && <p className="text-red-500 text-xs mt-1">{errors.name.message}</p>}
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-1.5">Email Address *</label>
                     <input {...register("email")} type="email" placeholder="your@email.com"
-                      className="w-full border border-gray-200 focus:border-green-500 focus:ring-1 focus:ring-green-500 rounded-xl px-4 py-2.5 text-sm outline-none transition-colors" />
+                      className="w-full border border-gray-200 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 rounded-xl px-4 py-2.5 text-sm outline-none transition-colors" />
                     {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email.message}</p>}
                   </div>
                 </div>
@@ -96,13 +96,13 @@ export default function VolunteerPage() {
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-1.5">Mobile Number *</label>
                     <input {...register("phone")} placeholder="10-digit mobile number"
-                      className="w-full border border-gray-200 focus:border-green-500 focus:ring-1 focus:ring-green-500 rounded-xl px-4 py-2.5 text-sm outline-none transition-colors" />
+                      className="w-full border border-gray-200 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 rounded-xl px-4 py-2.5 text-sm outline-none transition-colors" />
                     {errors.phone && <p className="text-red-500 text-xs mt-1">{errors.phone.message}</p>}
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-1.5">City *</label>
                     <input {...register("city")} placeholder="Your city"
-                      className="w-full border border-gray-200 focus:border-green-500 focus:ring-1 focus:ring-green-500 rounded-xl px-4 py-2.5 text-sm outline-none transition-colors" />
+                      className="w-full border border-gray-200 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 rounded-xl px-4 py-2.5 text-sm outline-none transition-colors" />
                     {errors.city && <p className="text-red-500 text-xs mt-1">{errors.city.message}</p>}
                   </div>
                 </div>
@@ -110,7 +110,7 @@ export default function VolunteerPage() {
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-1.5">State</label>
                   <input {...register("state")} placeholder="Your state"
-                    className="w-full border border-gray-200 focus:border-green-500 focus:ring-1 focus:ring-green-500 rounded-xl px-4 py-2.5 text-sm outline-none transition-colors" />
+                    className="w-full border border-gray-200 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 rounded-xl px-4 py-2.5 text-sm outline-none transition-colors" />
                 </div>
 
                 <div>
@@ -118,7 +118,7 @@ export default function VolunteerPage() {
                   <div className="grid grid-cols-2 gap-2">
                     {SKILLS.map((skill) => (
                       <label key={skill} className="flex items-center gap-2 text-sm cursor-pointer">
-                        <input type="checkbox" value={skill} {...register("skills")} className="accent-green-600 w-4 h-4" />
+                        <input type="checkbox" value={skill} {...register("skills")} className="accent-blue-600 w-4 h-4" />
                         <span className="text-gray-700">{skill}</span>
                       </label>
                     ))}
@@ -131,7 +131,7 @@ export default function VolunteerPage() {
                   <div className="grid grid-cols-2 gap-2">
                     {INTERESTS.map((interest) => (
                       <label key={interest} className="flex items-center gap-2 text-sm cursor-pointer">
-                        <input type="checkbox" value={interest} {...register("interests")} className="accent-green-600 w-4 h-4" />
+                        <input type="checkbox" value={interest} {...register("interests")} className="accent-blue-600 w-4 h-4" />
                         <span className="text-gray-700">{interest}</span>
                       </label>
                     ))}
@@ -141,7 +141,7 @@ export default function VolunteerPage() {
 
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-1.5">Availability *</label>
-                  <select {...register("availability")} className="w-full border border-gray-200 focus:border-green-500 rounded-xl px-4 py-2.5 text-sm outline-none bg-white">
+                  <select {...register("availability")} className="w-full border border-gray-200 focus:border-blue-500 rounded-xl px-4 py-2.5 text-sm outline-none bg-white">
                     <option value="WEEKDAYS">Weekdays</option>
                     <option value="WEEKENDS">Weekends</option>
                     <option value="BOTH">Both Weekdays & Weekends</option>
@@ -150,7 +150,7 @@ export default function VolunteerPage() {
                 </div>
 
                 <button type="submit" disabled={isSubmitting}
-                  className="w-full bg-green-600 hover:bg-green-700 disabled:opacity-60 text-white font-bold py-3.5 rounded-xl transition-colors text-sm">
+                  className="w-full bg-blue-600 hover:bg-blue-700 disabled:opacity-60 text-white font-bold py-3.5 rounded-xl transition-colors text-sm">
                   {isSubmitting ? "Submitting..." : "Submit Volunteer Application →"}
                 </button>
               </form>

@@ -31,7 +31,7 @@ export function ProgressBar({ raised, goal, animated = true, showLabels = true, 
   };
 
   const barColor =
-    percentage >= 100 ? "bg-green-500" : percentage > 60 ? "bg-blue-500" : "bg-amber-500";
+    percentage >= 100 ? "bg-blue-500" : percentage > 60 ? "bg-blue-500" : "bg-amber-500";
 
   return (
     <div ref={ref}>
@@ -40,7 +40,7 @@ export function ProgressBar({ raised, goal, animated = true, showLabels = true, 
           <span className="text-sm font-bold text-gray-800">{formatINR(raised)}</span>
           <span
             className={`text-xs font-bold px-2 py-0.5 rounded-full ${
-              percentage >= 100 ? "bg-green-100 text-green-700" : "bg-blue-100 text-blue-700"
+              percentage >= 100 ? "bg-blue-100 text-blue-700" : "bg-blue-100 text-blue-700"
             }`}
           >
             {percentage}%

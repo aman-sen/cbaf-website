@@ -9,7 +9,7 @@ interface Props {
 }
 
 const COLORS = {
-  green:  "bg-green-50  text-green-600",
+  green:  "bg-blue-50  text-blue-600",
   blue:   "bg-blue-50   text-blue-600",
   purple: "bg-purple-50 text-purple-600",
   amber:  "bg-amber-50  text-amber-600",
@@ -23,7 +23,7 @@ export function AdminStatsCard({ label, value, icon: Icon, color, change }: Prop
         <div className={`w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 ${COLORS[color]}`}>
           <Icon className="w-5 h-5" />
         </div>
-        {change && <span className="text-xs text-green-600 font-semibold bg-green-50 px-2 py-0.5 rounded-full">{change}</span>}
+        {change && <span className="text-xs text-blue-600 font-semibold bg-blue-50 px-2 py-0.5 rounded-full">{change}</span>}
       </div>
       <div className="font-display text-2xl font-bold text-gray-900">{value}</div>
       <div className="text-xs text-gray-400 mt-1">{label}</div>

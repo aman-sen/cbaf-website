@@ -53,7 +53,7 @@ export function CampaignCard({
       className="bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group flex flex-col"
     >
       {/* Image */}
-      <div className="relative h-44 bg-gradient-to-br from-green-50 to-blue-50 overflow-hidden flex-shrink-0">
+      <div className="relative h-44 bg-gradient-to-br from-blue-50 to-blue-100 overflow-hidden flex-shrink-0">
         {coverImage ? (
           <Image
             src={coverImage}
@@ -74,7 +74,7 @@ export function CampaignCard({
             <span className="bg-orange-100 text-orange-700 text-xs font-bold px-2.5 py-1 rounded-full">Trending</span>
           )}
           {percentage >= 100 && (
-            <span className="bg-green-100 text-green-700 text-xs font-bold px-2.5 py-1 rounded-full border border-green-200">
+            <span className="bg-blue-100 text-blue-700 text-xs font-bold px-2.5 py-1 rounded-full border border-blue-200">
               {percentage}% Funded ✓
             </span>
           )}
@@ -111,7 +111,7 @@ export function CampaignCard({
         <div className="flex gap-2">
           <Link
             href={`/donate?campaign=${id}`}
-            className="flex-1 bg-green-600 hover:bg-green-700 text-white text-sm font-bold py-2.5 rounded-xl text-center transition-colors"
+            className="flex-1 bg-blue-600 hover:bg-blue-700 text-white text-sm font-bold py-2.5 rounded-xl text-center transition-colors"
           >
             ❤ Donate Now
           </Link>
