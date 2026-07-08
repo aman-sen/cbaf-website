@@ -6,12 +6,6 @@ export const metadata: Metadata = {
   description: "Learn about Community Base Advancement Foundation — our story, team, and mission to build stronger communities across India.",
 };
 
-const team = [
-  { name: "Dr. Anjali Sharma", role: "Founder & Executive Director", bio: "15+ years in community development and social work across rural India." },
-  { name: "Rajan Gupta", role: "Director, Programs", bio: "Former NGO sector veteran with expertise in education and livelihood programs." },
-  { name: "Meera Nair", role: "Head, Women Empowerment", bio: "Champion of gender equality with deep grassroots experience in Bihar and Jharkhand." },
-  { name: "Akash Tiwari", role: "Director, Fundraising", bio: "Digital fundraising specialist who has raised ₹10Cr+ for social causes." },
-];
 
 export default function AboutPage() {
   return (
@@ -88,25 +82,7 @@ export default function AboutPage() {
       </section>
 
       {/* Team */}
-      <section className="py-16 bg-white">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6">
-          <div className="text-center mb-12">
-            <h2 className="font-display text-3xl font-bold text-gray-900">Leadership Team</h2>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {team.map((member) => (
-              <div key={member.name} className="text-center">
-                <div className="w-20 h-20 bg-gradient-to-br from-blue-100 to-blue-200 rounded-full mx-auto mb-3 flex items-center justify-center text-2xl font-bold text-blue-700 font-display">
-                  {member.name.split(" ").map((n) => n[0]).join("").slice(0, 2)}
-                </div>
-                <h3 className="font-semibold text-gray-900 text-sm">{member.name}</h3>
-                <p className="text-xs text-blue-600 font-medium mb-2">{member.role}</p>
-                <p className="text-xs text-gray-500 leading-relaxed">{member.bio}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      
     </div>
   );
 }
