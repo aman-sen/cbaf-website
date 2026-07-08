@@ -4,10 +4,14 @@ import { prisma } from "@/lib/prisma";
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://communityfoundation.in";
 
-  const  projects = await Promise.all([
-    // prisma.campaign.findMany({ select: { slug: true, updatedAt: true }, where: { status: "ACTIVE" } }),
-    prisma.project.findMany({ select: { slug: true, updatedAt: true } }),
-  ]);
+  // const  projects = await Promise.all([
+  //   // prisma.campaign.findMany({ select: { slug: true, updatedAt: true }, where: { status: "ACTIVE" } }),
+  //   prisma.project.findMany({ select: { slug: true, updatedAt: true } }),
+  // ]);
+
+  const projects = await prisma.project.findMany({
+  select: { slug: true, updatedAt: true },
+});
 
   const staticRoutes = [
     { url: "/", priority: 1.0, freq: "daily" },
