@@ -12,7 +12,7 @@ const QUICK_LINKS = [
   { label: "About Us",         href: "/about" },
   { label: "Vision & Mission", href: "/vision-mission" },
   { label: "Our Projects",     href: "/projects" },
-  { label: "Campaigns",        href: "/campaigns" },
+  // { label: "Campaigns",        href: "/campaigns" },
   { label: "Impact Dashboard", href: "/impact" },
   { label: "News & Media",     href: "/news" },
   { label: "Gallery",          href: "/gallery" },

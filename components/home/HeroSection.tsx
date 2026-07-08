@@ -194,8 +194,8 @@ const slides = [
   {
     heading: "Every Rupee You Give Changes a Life",
     subheading: "₹500 provides an educational kit. ₹1000 feeds 10 children for a month. Your generosity, amplified by our programs, creates real change on the ground.",
-    cta: "See Campaigns",
-    ctaHref: "/campaigns",
+    cta: "Donate Now",
+    ctaHref: "/donate",
     highlight: "Rupee",
     image: "/hero/slide2.jpg",
   },
@@ -210,9 +210,9 @@ const slides = [
 ];
 
 const heroStats = [
-  { value: "₹2.8Cr+", label: "Funds Raised" },
+  { value: "6,000+", label: "Trees Planted" },
   { value: "6,200+",  label: "Beneficiaries" },
-  { value: "48",      label: "Active Campaigns" },
+  { value: "Pan India",      label: "Presence" },
   { value: "100+",    label: "Volunteers" },
 ];
 

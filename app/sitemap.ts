@@ -4,8 +4,8 @@ import { prisma } from "@/lib/prisma";
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://communityfoundation.in";
 
-  const [campaigns, projects] = await Promise.all([
-    prisma.campaign.findMany({ select: { slug: true, updatedAt: true }, where: { status: "ACTIVE" } }),
+  const  projects = await Promise.all([
+    // prisma.campaign.findMany({ select: { slug: true, updatedAt: true }, where: { status: "ACTIVE" } }),
     prisma.project.findMany({ select: { slug: true, updatedAt: true } }),
   ]);
 
@@ -13,7 +13,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: "/", priority: 1.0, freq: "daily" },
     { url: "/about", priority: 0.9, freq: "monthly" },
     { url: "/vision-mission", priority: 0.8, freq: "monthly" },
-    { url: "/campaigns", priority: 0.9, freq: "daily" },
+    // { url: "/campaigns", priority: 0.9, freq: "daily" },
     { url: "/projects", priority: 0.8, freq: "weekly" },
     // { url: "/fund-predictor", priority: 0.7, freq: "monthly" },
     { url: "/impact", priority: 0.8, freq: "weekly" },
@@ -33,12 +33,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: freq as any,
       priority,
     })),
-    ...campaigns.map((c) => ({
-      url: `${baseUrl}/campaigns/${c.slug}`,
-      lastModified: c.updatedAt,
-      changeFrequency: "daily" as const,
-      priority: 0.9,
-    })),
+    // ...campaigns.map((c) => ({
+    //   url: `${baseUrl}/campaigns/${c.slug}`,
+    //   lastModified: c.updatedAt,
+    //   changeFrequency: "daily" as const,
+    //   priority: 0.9,
+    // })),
     ...projects.map((p) => ({
       url: `${baseUrl}/projects/${p.slug}`,
       lastModified: p.updatedAt,

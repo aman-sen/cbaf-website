@@ -13,7 +13,7 @@ const navLinks = [
     href: "#",
     children: [
       { label: "Projects", href: "/projects" },
-      { label: "Campaigns", href: "/campaigns" },
+      // { label: "Campaigns", href: "/campaigns" },
       // { label: "Fund Predictor", href: "/fund-predictor" },
     ],
   },

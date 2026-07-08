@@ -23,7 +23,7 @@ export function AboutSection() {
             viewport={{ once: true }}
             className="relative"
           >
-            <div className="relative rounded-2xl overflow-hidden h-80 bg-gradient-to-br from-blue-50 to-blue-100">
+            {/* <div className="relative rounded-2xl overflow-hidden h-80 bg-gradient-to-br from-blue-50 to-blue-100">
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(59,130,246,0.15),transparent_60%),radial-gradient(circle_at_70%_50%,rgba(59,130,246,0.1),transparent_60%)]" />
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="text-center">
@@ -31,7 +31,17 @@ export function AboutSection() {
                   <div className="font-display text-2xl font-bold text-blue-700">Est. 2015</div>
                   <div className="text-sm text-gray-500 mt-1">Serving Communities</div>
                 </div>
-              </div>
+              </div> */}
+
+            <div className="relative rounded-2xl overflow-hidden h-80">
+  <img
+    src="/images/about-ngo.jpg"
+    alt="Community Base Advancement Foundation"
+    className="w-full h-full object-cover"
+  />
+  {/* Dark overlay */}
+  <div className="absolute inset-0 bg-slate-900/20" />
+
               {/* Floating cards */}
               <div className="absolute top-4 right-4 bg-white rounded-xl p-3 shadow-lg">
                 <div className="flex items-center gap-2">
