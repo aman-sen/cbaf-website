@@ -200,11 +200,11 @@ const slides = [
     image: "/hero/slide2.jpg",
   },
   {
-    heading: "Join 320+ Volunteers Making a Difference",
+    heading: "Join 400+ Volunteers Making a Difference",
     subheading: "From teaching rural children to planting trees, our volunteers are the backbone of everything we do. Your time and skills matter.",
     cta: "Become a Volunteer",
     ctaHref: "/volunteer",
-    highlight: "320+",
+    highlight: "400+",
     image: "/hero/slide3.jpg",
   },
 ];

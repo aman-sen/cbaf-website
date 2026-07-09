@@ -19,7 +19,8 @@ const navLinks = [
   },
   { label: "Impact", href: "/impact" },
   { label: "Volunteer", href: "/volunteer" },
-  { label: "News", href: "/news" },
+  // { label: "News", href: "/news" },
+  { label: "Vision & Mission",   href: "/vision-mission" },
   { label: "Contact", href: "/contact" },
 ];
 

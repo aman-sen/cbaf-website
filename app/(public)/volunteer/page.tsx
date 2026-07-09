@@ -32,9 +32,9 @@ export default function VolunteerPage() {
   }
 
   const stats = [
-    { icon: Users, value: "320+", label: "Active Volunteers" },
-    { icon: Heart, value: "12K+", label: "Lives Impacted" },
-    { icon: Globe, value: "18", label: "States Active" },
+    { icon: Users, value: "400+", label: "Active Volunteers" },
+    { icon: Heart, value: "6.2K+", label: "Lives Impacted" },
+    { icon: Globe, value: "Pan India", label: "Presence" },
   ];
 
   return (
@@ -49,7 +49,7 @@ export default function VolunteerPage() {
             Join Our Volunteer Family
           </h1>
           <p className="text-gray-300 text-lg leading-relaxed">
-            Your skills, time, and passion can transform lives. Join 320+ volunteers making real change across India.
+            Your skills, time, and passion can transform lives. Join 400+ volunteers making real change across India.
           </p>
           <div className="grid grid-cols-3 gap-4 mt-8 max-w-sm mx-auto">
             {stats.map(({ icon: Icon, value, label }) => (
