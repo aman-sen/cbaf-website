@@ -3,12 +3,12 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight, Award, Users, Globe } from "lucide-react";
 
-const stats = [
-  { value: "48", label: "Active Projects" },
-  { value: "18", label: "States Covered" },
-  { value: "12K+", label: "Lives Impacted" },
-  { value: "9+", label: "Years of Service" },
-];
+// const stats = [
+//   { value: "48", label: "Active Projects" },
+//   { value: "18", label: "States Covered" },
+//   { value: "12K+", label: "Lives Impacted" },
+//   { value: "9+", label: "Years of Service" },
+// ];
 
 export function AboutSection() {
   return (
@@ -82,14 +82,14 @@ export function AboutSection() {
             </p>
 
             {/* Stats grid */}
-            <div className="grid grid-cols-2 gap-4 mb-8">
+            {/* <div className="grid grid-cols-2 gap-4 mb-8">
               {stats.map((stat) => (
                 <div key={stat.label} className="bg-gray-50 rounded-xl p-4 border border-gray-100">
                   <div className="font-display text-2xl font-bold text-blue-600">{stat.value}</div>
                   <div className="text-xs text-gray-500 mt-1">{stat.label}</div>
                 </div>
               ))}
-            </div>
+            </div> */}
 
             <Link
               href="/about"

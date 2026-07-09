@@ -96,11 +96,11 @@ export default async function ProjectsPage() {
                       {project.description}
                     </p>
 
-                    {project.location && (
+                    {/* {project.location && ( */}
                       <div className="flex items-center gap-1.5 text-xs text-gray-400 mb-2">
-                        <MapPin className="w-3.5 h-3.5" /> {project.location}
+                        <MapPin className="w-3.5 h-3.5" /> Pan India
                       </div>
-                    )}
+                    {/* )} */}
                     {project.beneficiaries && (
                       <div className="flex items-center gap-1.5 text-xs text-gray-500 mb-3">
                         <Users className="w-3.5 h-3.5 text-blue-500" />
@@ -108,7 +108,7 @@ export default async function ProjectsPage() {
                       </div>
                     )}
 
-                    {project.budget && (
+                    {/* {project.budget && (
                       <div className="mb-4">
                         <div className="flex justify-between text-xs text-gray-400 mb-1">
                           <span>Budget utilised</span>
@@ -121,7 +121,7 @@ export default async function ProjectsPage() {
                           />
                         </div>
                       </div>
-                    )}
+                    )} */}
 
                     {metrics && (
                       <div className="grid grid-cols-2 gap-2 mb-4">

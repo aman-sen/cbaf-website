@@ -3,14 +3,13 @@ import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 
 const stats = [
-  { icon: "💰", target: 28000000, label: "Total Funds Raised", format: (v: number) => `₹${(v / 10000000).toFixed(1)}Cr+` },
   { icon: "👥", target: 6200, label: "Lives Impacted", format: (v: number) => `${Math.round(v).toLocaleString("en-IN")}+` },
-  { icon: "🌳", target: 5000, label: "Trees Planted", format: (v: number) => `${Math.round(v).toLocaleString("en-IN")}+` },
+  { icon: "🌳", target: 6000, label: "Trees Planted", format: (v: number) => `${Math.round(v).toLocaleString("en-IN")}+` },
   { icon: "👩", target: 1000, label: "Women Empowered", format: (v: number) => `${Math.round(v).toLocaleString("en-IN")}+` },
   { icon: "📚", target: 1100, label: "Students Educated", format: (v: number) => `${Math.round(v).toLocaleString("en-IN")}+` },
-  { icon: "🤝", target: 100, label: "Active Volunteers", format: (v: number) => `${Math.round(v)}+` },
-  { icon: "🏕️", target: 50, label: "Campaigns Completed", format: (v: number) => `${Math.round(v)}` },
-  { icon: "🗺️", target: 6, label: "Districts Reached", format: (v: number) => `${Math.round(v)}` },
+  { icon: "🤝", target: 400, label: "Active Volunteers", format: (v: number) => `${Math.round(v)}+` },
+  // { icon: "🗺️", target: 6, label: "Presence", format: (v: number) => `${Math.round(v)}` },
+  { icon: "🗺️", target: 0, label: "Presence", format: () => `Pan India` },
 ];
 
 function Counter({ target, format }: { target: number; format: (v: number) => string }) {
@@ -63,7 +62,8 @@ export function ImpactStats() {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+<div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+        {/* <div className="grid grid-cols-2 sm:grid-cols-4 gap-4"> */}
           {stats.map((stat, i) => (
             <motion.div
               key={stat.label}

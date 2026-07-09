@@ -48,8 +48,7 @@ export default function AboutPage() {
               restoration and emergency relief, our work spans the full spectrum of community needs.
             </p>
             <p>
-              Today, CBAF operates across 18 states, has impacted 6,200+ lives, and manages 48
-              active projects. We remain committed to our founding vision: communities that are
+              Today, CBAF operates pan-India, has impacted 6,200+ lives. We remain committed to our founding vision: communities that are
               self-reliant, equitable, and resilient.
             </p>
           </div>

@@ -20,7 +20,7 @@ export default async function ProjectDetailPage({ params }: Props) {
   if (!project) notFound();
 
   const metrics  = project.impactMetrics as Record<string, any> | null;
-  const progress = project.budget ? Math.round((project.spent / project.budget) * 100) : 0;
+  // const progress = project.budget ? Math.round((project.spent / project.budget) * 100) : 0;
 
   const formatINR = (n: number) =>
     new Intl.NumberFormat("en-IN", {
@@ -67,7 +67,8 @@ export default async function ProjectDetailPage({ params }: Props) {
                 {project.location && (
                   <span className="flex items-center gap-1.5">
                     <MapPin className="w-4 h-4 text-blue-500" />
-                    {project.location}
+                    {/* {project.location} */}
+                    Pan India
                   </span>
                 )}
                 {project.beneficiaries && (
@@ -114,7 +115,7 @@ export default async function ProjectDetailPage({ params }: Props) {
           </div>
 
           <div className="space-y-4">
-            <div className="bg-white rounded-2xl p-5 border border-gray-100">
+            {/* <div className="bg-white rounded-2xl p-5 border border-gray-100">
               <h3 className="font-semibold text-gray-800 mb-4">Project Details</h3>
               <div className="space-y-3 text-sm">
                 <div className="flex justify-between">
@@ -146,7 +147,7 @@ export default async function ProjectDetailPage({ params }: Props) {
                   </>
                 )}
               </div>
-            </div>
+            </div> */}
             <Link
               href="/donate"
               className="block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-xl text-center text-sm transition-colors"
