@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 const stats = [
   { icon: "👥", target: 6200, label: "Lives Impacted", format: (v: number) => `${Math.round(v).toLocaleString("en-IN")}+` },
   { icon: "🌳", target: 6000, label: "Trees Planted", format: (v: number) => `${Math.round(v).toLocaleString("en-IN")}+` },
-  { icon: "👩", target: 1000, label: "Women Empowered", format: (v: number) => `${Math.round(v).toLocaleString("en-IN")}+` },
+  { icon: "👩", target: 700, label: "Women Empowered", format: (v: number) => `${Math.round(v).toLocaleString("en-IN")}+` },
   { icon: "📚", target: 1100, label: "Students Educated", format: (v: number) => `${Math.round(v).toLocaleString("en-IN")}+` },
   { icon: "🤝", target: 400, label: "Active Volunteers", format: (v: number) => `${Math.round(v)}+` },
   // { icon: "🗺️", target: 6, label: "Presence", format: (v: number) => `${Math.round(v)}` },

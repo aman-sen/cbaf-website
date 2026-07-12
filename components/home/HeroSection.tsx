@@ -213,7 +213,7 @@ const heroStats = [
   { value: "6,000+", label: "Trees Planted" },
   { value: "6,200+",  label: "Beneficiaries" },
   { value: "Pan India",      label: "Presence" },
-  { value: "100+",    label: "Volunteers" },
+  { value: "400+",    label: "Volunteers" },
 ];
 
 export function HeroSection() {

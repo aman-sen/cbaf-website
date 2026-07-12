@@ -38,7 +38,7 @@ export default function VisionMissionPage() {
           </div>
 
           {/* Strategic Goals */}
-          <div>
+          {/* <div>
             <h2 className="font-display text-2xl font-bold text-gray-900 mb-6">Strategic Goals 2025–2030</h2>
             <div className="space-y-4">
               {[
@@ -54,7 +54,7 @@ export default function VisionMissionPage() {
                 </div>
               ))}
             </div>
-          </div>
+          </div> */}
         </div>
       </section>
     </div>
