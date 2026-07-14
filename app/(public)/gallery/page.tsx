@@ -111,9 +111,9 @@ export default function GalleryPage() {
 
           ))}
         </div>
-        <p className="text-center text-gray-400 text-sm mt-8">
+        {/* <p className="text-center text-gray-400 text-sm mt-8">
           Full photo gallery with real images coming soon. Upload via the Admin panel.
-        </p>
+        </p> */}
       </div>
     </div>
   );
