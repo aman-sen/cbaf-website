@@ -5,21 +5,45 @@ export const metadata: Metadata = {
   description: "Photos and videos from CBAF programs, events, and community work across India.",
 };
 
-const categories = ["All", "Women Empowerment", "Education", "Environment", "Emergency Relief", "Events"];
+// const categories = ["All", "Women Empowerment", "Education", "Environment", "Emergency Relief", "Events"];
+
+const categories = ["All", "Education", "Environment", "Women Empowerment", "Child Welfare"];
+
+// const placeholderImages = [
+//   // { label: "Women's Training Batch 5",  category: "Women Empowerment", emoji: "👩‍💼" },
+//   { label: "School Smart Classroom",      category: "Education",          emoji: "📱" },
+//   // { label: "Tree Plantation Drive 2024",  category: "Environment",        emoji: "🌳" },
+//   // { label: "Flood Relief Camp — Assam",   category: "Emergency Relief",   emoji: "🆘" },
+//   // { label: "Youth Leadership Workshop",   category: "Events",             emoji: "⭐" },
+//   // { label: "Graduation Ceremony 2024",    category: "Women Empowerment",  emoji: "🎓" },
+//   { label: "Village Health Camp",         category: "Events",             emoji: "🏥" },
+//   { label: "Digital Literacy Class",      category: "Education",          emoji: "💻" },
+//   // { label: "Community Garden Project",    category: "Environment",        emoji: "🌱" },
+//   // { label: "Annual Volunteer Summit",     category: "Events",             emoji: "🤝" },
+//   { label: "Rural School Visit",          category: "Education",          emoji: "📚" },
+//   // { label: "Relief Kit Distribution",     category: "Emergency Relief",   emoji: "📦" },
+// ];
 
 const placeholderImages = [
-  { label: "Women's Training Batch 5",  category: "Women Empowerment", emoji: "👩‍💼" },
-  { label: "School Smart Classroom",      category: "Education",          emoji: "📱" },
-  { label: "Tree Plantation Drive 2024",  category: "Environment",        emoji: "🌳" },
-  { label: "Flood Relief Camp — Assam",   category: "Emergency Relief",   emoji: "🆘" },
-  { label: "Youth Leadership Workshop",   category: "Events",             emoji: "⭐" },
-  { label: "Graduation Ceremony 2024",    category: "Women Empowerment",  emoji: "🎓" },
-  { label: "Village Health Camp",         category: "Events",             emoji: "🏥" },
-  { label: "Digital Literacy Class",      category: "Education",          emoji: "💻" },
-  { label: "Community Garden Project",    category: "Environment",        emoji: "🌱" },
-  { label: "Annual Volunteer Summit",     category: "Events",             emoji: "🤝" },
-  { label: "Rural School Visit",          category: "Education",          emoji: "📚" },
-  { label: "Relief Kit Distribution",     category: "Emergency Relief",   emoji: "📦" },
+  // Shanti Vidya Setu
+  // { label: "Shanti Vidya Setu — Digital Literacy",  category: "Education",          emoji: "💻", image: "/projects/shanti-vidya-setu.jpg" },
+  { label: "Shanti Vidya Setu — Learning Center",   category: "Education",          emoji: "📚", image: "/projects/shanti-vidya-setu.jpg" },
+  // { label: "Shanti Vidya Setu — Youth Training",    category: "Education",          emoji: "🎓", image: "/projects/shanti-vidya-setu.jpg" },
+
+  // Hariyali
+  { label: "Hariyali — Tree Plantation Drive",      category: "Environment",        emoji: "🌳", image: "/projects/hariyali.jpg" },
+  // { label: "Hariyali — Clean Community Drive",      category: "Environment",        emoji: "🌱", image: "/projects/hariyali.jpg" },
+  // { label: "Hariyali — Green Community",            category: "Environment",        emoji: "♻️", image: "/projects/hariyali.jpg" },
+
+  // Skill Shakti
+  // { label: "Skill Shakti — Vocational Training",   category: "Women Empowerment",  emoji: "👩‍💼", image: "/projects/skill-shakti.jpg" },
+  // { label: "Skill Shakti — Job Placement",         category: "Women Empowerment",  emoji: "⭐", image: "/projects/skill-shakti.jpg" },
+  { label: "Skill Shakti — Skill Center",          category: "Women Empowerment",  emoji: "🏆", image: "/projects/skill-shakti.jpg" },
+
+  // Pragati Path
+  { label: "Pragati Path — Children Learning",     category: "Child Welfare",      emoji: "📖", image: "/projects/pragati-path.jpg" },
+  // { label: "Pragati Path — Nutritious Meals",      category: "Child Welfare",      emoji: "🍱", image: "/projects/pragati-path.jpg" },
+  // { label: "Pragati Path — Academic Support",      category: "Child Welfare",      emoji: "✏️", image: "/projects/pragati-path.jpg" },
 ];
 
 const COLORS = [
@@ -52,11 +76,39 @@ export default function GalleryPage() {
         {/* Grid */}
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
           {placeholderImages.map((img, i) => (
-            <div key={img.label} className={`bg-gradient-to-br ${COLORS[i % COLORS.length]} rounded-2xl aspect-square flex flex-col items-center justify-center p-4 cursor-pointer hover:scale-105 transition-transform group`}>
-              <div className="text-4xl mb-3">{img.emoji}</div>
-              <div className="text-xs font-semibold text-gray-700 text-center leading-snug">{img.label}</div>
-              <div className="text-xs text-gray-500 mt-1">{img.category}</div>
-            </div>
+            // <div key={img.label} className={`bg-gradient-to-br ${COLORS[i % COLORS.length]} rounded-2xl aspect-square flex flex-col items-center justify-center p-4 cursor-pointer hover:scale-105 transition-transform group`}>
+            //   <div className="text-4xl mb-3">{img.emoji}</div>
+            //   <div className="text-xs font-semibold text-gray-700 text-center leading-snug">{img.label}</div>
+            //   <div className="text-xs text-gray-500 mt-1">{img.category}</div>
+            // </div>
+          
+            <div key={img.label} className="relative rounded-2xl aspect-square overflow-hidden cursor-pointer hover:scale-105 transition-transform group">
+  {img.image ? (
+    <>
+      <img
+        src={img.image}
+        alt={img.label}
+        className="w-full h-full object-cover"
+      />
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-slate-900/40 group-hover:bg-slate-900/20 transition-all" />
+      {/* Label at bottom */}
+      <div className="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-slate-900/80 to-transparent">
+        <div className="text-white text-xs font-semibold leading-snug">{img.label}</div>
+        <div className="text-gray-300 text-xs mt-0.5">{img.category}</div>
+      </div>
+    </>
+  ) : (
+    <>
+      <div className={`w-full h-full bg-gradient-to-br ${COLORS[i % COLORS.length]} flex flex-col items-center justify-center p-4`}>
+        <div className="text-4xl mb-3">{img.emoji}</div>
+        <div className="text-xs font-semibold text-gray-700 text-center leading-snug">{img.label}</div>
+        <div className="text-xs text-gray-500 mt-1">{img.category}</div>
+      </div>
+    </>
+  )}
+</div>
+
           ))}
         </div>
         <p className="text-center text-gray-400 text-sm mt-8">
