@@ -7,14 +7,26 @@ export const metadata: Metadata = {
   description: "Make a donation to Community Base Advancement Foundation.",
 };
 
-async function getActiveCampaigns() {
+// async function getActiveCampaigns() {
+//   try {
+//     const { prisma } = await import("@/lib/prisma");
+//     return await prisma.campaign.findMany({
+//       where:   { status: "ACTIVE" },
+//       select:  { id: true, title: true, category: true, raisedAmount: true, goalAmount: true },
+//       orderBy: [{ isUrgent: "desc" }, { isFeatured: "desc" }],
+//       take:    10,
+//     });
+//   } catch {
+//     return [];
+//   }
+// }
+
+async function getProjects() {
   try {
     const { prisma } = await import("@/lib/prisma");
-    return await prisma.campaign.findMany({
-      where:   { status: "ACTIVE" },
-      select:  { id: true, title: true, category: true, raisedAmount: true, goalAmount: true },
-      orderBy: [{ isUrgent: "desc" }, { isFeatured: "desc" }],
-      take:    10,
+    return await prisma.project.findMany({
+      select: { id: true, title: true, category: true, beneficiaries: true },
+      orderBy: [{ isFeatured: "desc" }, { createdAt: "desc" }],
     });
   } catch {
     return [];
@@ -25,8 +37,11 @@ async function getActiveCampaigns() {
 const DEMO_CAMPAIGN_ID = "demo-campaign-id";
 
 export default async function DonatePage() {
-  const activeCampaigns = await getActiveCampaigns();
-  const generalCampaign = activeCampaigns[0] || null;
+  // const activeCampaigns = await getActiveCampaigns();
+  // const generalCampaign = activeCampaigns[0] || null;
+
+  const projects = await getProjects();
+const generalProject = projects[0];
 
   return (
     <div className="bg-gray-50 min-h-screen">
@@ -45,7 +60,7 @@ export default async function DonatePage() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 py-12">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           <div className="lg:col-span-2">
-            {activeCampaigns.length > 0 && (
+            {/* {activeCampaigns.length > 0 && (
               <div className="bg-white rounded-2xl border border-gray-100 p-6 mb-6">
                 <h2 className="font-display text-lg font-bold text-gray-900 mb-4">Choose a Campaign</h2>
                 <div className="space-y-2 max-h-60 overflow-y-auto">
@@ -74,14 +89,37 @@ export default async function DonatePage() {
                   })}
                 </div>
               </div>
-            )}
+            )} */}
+
+
+            {projects.length > 0 && (
+  <div className="bg-white rounded-2xl border border-gray-100 p-6 mb-6">
+    <h2 className="font-display text-lg font-bold text-gray-900 mb-4">Choose a Project</h2>
+    <div className="space-y-2 max-h-60 overflow-y-auto">
+      {projects.map((p, i) => (
+        <label key={p.id} className="flex items-center gap-3 p-3 rounded-xl hover:bg-gray-50 cursor-pointer border border-transparent hover:border-gray-200 transition-all">
+          <input type="radio" name="project" value={p.id} defaultChecked={i === 0} className="accent-blue-600" />
+          <div className="flex-1 min-w-0">
+            <div className="font-medium text-gray-800 text-sm truncate">{p.title}</div>
+            <div className="text-xs text-gray-400 mt-0.5">
+              {p.category}
+              {p.beneficiaries && ` · ${p.beneficiaries.toLocaleString("en-IN")} beneficiaries`}
+            </div>
+          </div>
+        </label>
+      ))}
+    </div>
+  </div>
+)}
 
             <div className="bg-white rounded-2xl border border-gray-100 p-6">
               <h2 className="font-display text-lg font-bold text-gray-900 mb-5">Donation Details</h2>
-              <DonationWidget
+              {/* <DonationWidget
                 campaignId={generalCampaign?.id || DEMO_CAMPAIGN_ID}
                 campaignTitle={generalCampaign?.title || "Community Base Advancement Foundation"}
-              />
+              /> */}
+                <DonationWidget campaignId={generalProject.id} campaignTitle={generalProject.title} />
+
             </div>
           </div>
 
