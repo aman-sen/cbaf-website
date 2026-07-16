@@ -30,13 +30,50 @@ export function DonationWidget({ campaignId, campaignTitle }: Props) {
 
   const finalAmount = custom ? Number(custom) : amount;
   const impact = IMPACT_MAP[amount];
+   
+  const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-  async function handleDonate() {
-    setError("");
-    if (!donorName || !donorEmail) {
-      setError("Please enter your name and email.");
-      return;
-    }
+  // async function handleDonate() {
+  //   setError("");
+  //   if (!donorName || !donorEmail) {
+  //     setError("Please enter your name and email.");
+  //     return;
+  //   }
+
+  const [emailTouched, setEmailTouched] = useState(false);
+const emailValid = donorEmail === "" || EMAIL_REGEX.test(donorEmail);
+
+<input
+  type="email"
+  placeholder="Your email address *"
+  value={donorEmail}
+  onChange={(e) => setDonorEmail(e.target.value)}
+  onBlur={() => setEmailTouched(true)}
+  className={`w-full border ${
+    emailTouched && !emailValid ? "border-red-400" : "border-gray-200"
+  } focus:border-blue-500 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-1 focus:ring-blue-500`}
+/>
+{emailTouched && !emailValid && (
+  <p className="text-red-500 text-xs mt-1">Please enter a valid email address.</p>
+)}
+
+   async function handleDonate() {
+  setError("");
+  if (!donorName || !donorEmail) {
+    setError("Please enter your name and email.");
+    return;
+  }
+
+  if (!EMAIL_REGEX.test(donorEmail)) {
+    setError("Please enter a valid email address.");
+    return;
+  }
+
+  if (donorPhone && (donorPhone.length !== 10 || !/^[6-9]/.test(donorPhone))) {
+    setError("Please enter a valid 10-digit Indian mobile number.");
+    return;
+  }
+
     if (finalAmount < 10) {
       setError("Minimum donation is ₹10.");
       return;
@@ -73,7 +110,8 @@ export function DonationWidget({ campaignId, campaignTitle }: Props) {
             window.location.href = "/payment-failed";
           }
         },
-        prefill: { name: donorName, email: donorEmail, contact: donorPhone },
+        // prefill: { name: donorName, email: donorEmail, contact: donorPhone },
+        prefill: { name: donorName, email: donorEmail, contact: donorPhone ? `+91${donorPhone}` : "" },
         notes: { campaignId, campaignTitle },
         theme: { color: "#2563eb" },
         modal: {
@@ -164,13 +202,32 @@ export function DonationWidget({ campaignId, campaignTitle }: Props) {
           onChange={(e) => setDonorEmail(e.target.value)}
           className="w-full border border-gray-200 focus:border-blue-500 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-1 focus:ring-blue-500"
         />
-        <input
+        {/* <input
           type="tel"
           placeholder="Mobile number (optional)"
           value={donorPhone}
           onChange={(e) => setDonorPhone(e.target.value)}
           className="w-full border border-gray-200 focus:border-blue-500 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-1 focus:ring-blue-500"
-        />
+        /> */}
+
+       <div className="flex gap-2">
+  <div className="flex items-center px-3 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm text-gray-600 font-medium flex-shrink-0">
+    🇮🇳 +91
+  </div>
+  <input
+    type="tel"
+    placeholder="10-digit mobile number"
+    value={donorPhone}
+    onChange={(e) => {
+      const val = e.target.value.replace(/\D/g, "").slice(0, 10);
+      setDonorPhone(val);
+    }}
+    maxLength={10}
+    pattern="[6-9][0-9]{9}"
+    className="flex-1 border border-gray-200 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 rounded-xl px-4 py-2.5 text-sm focus:outline-none"
+  />
+</div>
+
         <textarea
           placeholder="Leave a message (optional)"
           value={message}
