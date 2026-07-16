@@ -45,7 +45,7 @@ export function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-3 flex-shrink-0">
+          {/* <Link href="/" className="flex items-center gap-3 flex-shrink-0">
             <Image
     src="/icons/logo.png"
     alt="CBAF Logo"
@@ -59,7 +59,23 @@ export function Navbar() {
               </div>
               <div className="text-xs text-gray-400 tracking-wide">Foundation</div>
             </div>
-          </Link>
+          </Link> */}
+
+         <Link href="/" className="flex items-center gap-2 flex-shrink-0 min-w-0">
+  <Image
+    src="/icons/logo.png"
+    alt="CBAF Logo"
+    width={40}
+    height={40}
+    className="rounded-lg object-contain flex-shrink-0"
+  />
+  <div className="block min-w-0">
+    <div className="font-display font-bold text-gray-900 text-xs sm:text-sm leading-tight truncate">
+      Community Base Advancement
+    </div>
+    <div className="text-[10px] sm:text-xs text-gray-400 tracking-wide">Foundation</div>
+  </div>
+</Link>
 
           {/* Desktop Nav */}
           <div className="hidden lg:flex items-center gap-1">
